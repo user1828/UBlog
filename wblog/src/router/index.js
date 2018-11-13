@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import Home from '@/components/home'
-
+import my from '@/components/Friends/my'
+import mydynamic from '@/components/Friends/mydynamic'
+import focus from '@/components/Friends/focus'
 Vue.use(Router)
 
 export default new Router({
@@ -15,9 +17,27 @@ export default new Router({
     //   name: 'home',
     //   component: Home
     // },
+    // {
+    //   path:"**",
+    //   component:Home
+    // }
     {
-      path:"**",
-      component:Home
+      path:"/my",
+      name:"my",
+      component:my,
+      children:[
+        {
+        path:"/mydynamic",
+        name:"mydynamic",
+        component:mydynamic
+      },{
+        path:"/focus",
+        name:"focus",
+        component:focus
+      }
+    ]
+     
+
     }
   ]
 })
