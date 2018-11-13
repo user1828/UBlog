@@ -17,12 +17,14 @@
                         <p><span>6</span>分钟前</p>
                     </div>
                     <div>
-                          <i>
-                              <img src="../../../static/img/dianzan _icon.png">
-                          </i>  
-                          <i>
-                              <img src="../../../static/img/pinglun_icon.png">
+                          <i class="iconfont icon-good">
+                              
                           </i>
+                            <router-link to="discuss">
+                          <i class="iconfont  icon-message">
+                             
+                          </i>
+                            </router-link>
                     </div>
                 </div>
                 <div>
@@ -101,19 +103,21 @@ export default {
            color:#1D1D1D;
            padding-left: 1.5rem;
            font-size: 0.18rem;
-           
+           padding-top: .2rem;
        }
       .focus div:nth-child(3) div:nth-child(2){
            padding-left: 2.8rem;
        }
-        .focus div:nth-child(3) div:nth-child(2) i:nth-child(1) img{
-           width: .29rem;
-           height: .31rem;
+        .focus div:nth-child(3) div:nth-child(2) i:nth-child(1) {
+           /* width: .29rem;
+           height: .31rem; */
+           font-size: .4rem;
             margin-left: 0.35rem;
        }
-        .focus div:nth-child(3) div:nth-child(2) i:nth-child(2) img{
-            width: 0.29rem;
-            height: 0.29rem;
+        .focus div:nth-child(3) div:nth-child(2) .router-link i {
+            /* width: 0.29rem;
+            height: 0.29rem; */
+            font-size: .5rem;
             margin-left: 0.35rem;
         }
         .focus div:nth-child(4){

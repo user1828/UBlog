@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import my from '@/components/Friends/my'
 import mydynamic from '@/components/Friends/mydynamic'
 import focus from '@/components/Friends/focus'
+import discuss from '@/components/Friends/discuss'
 Vue.use(Router)
 
 export default new Router({
@@ -29,8 +30,9 @@ export default new Router({
         {
         path:"/mydynamic",
         name:"mydynamic",
-        component:mydynamic
-      },{
+        component:mydynamic,
+      },
+      {
         path:"/focus",
         name:"focus",
         component:focus
@@ -38,6 +40,12 @@ export default new Router({
     ]
      
 
+    },
+    {
+      path:"/discuss",
+      name:"discuss",
+      component:discuss
     }
+
   ]
 })
