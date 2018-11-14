@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/home'
-
+import Home from '@/components/home/home'
+import Actions from "@/components/actions/actions"
+import Coiling from "@/components/coiling/coiling"
+import More from "@/components/actions/more"
 Vue.use(Router)
 
 export default new Router({
@@ -14,6 +16,21 @@ export default new Router({
       path: '/home',
       name: 'home',
       component: Home
-    }
+    },
+		{
+			path:"/actions",
+			name:"actions",
+			component:Actions
+		},
+		{
+			path:"/coiling",
+			name:"coiling",
+			component:Coiling
+		},
+		{
+			path:"/more",
+			name:"more",
+			component:More
+		}
   ]
 })

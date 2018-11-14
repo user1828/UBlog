@@ -3,13 +3,18 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
+import store from "./store"
+import "./css/reset.css"
+import "./js/rem"
+import "../static/wefont/iconfont.css"
+import "../static/wefont/iconfont.js"
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
