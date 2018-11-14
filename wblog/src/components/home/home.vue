@@ -20,8 +20,9 @@
 			"content-com":content,
 			"banner-com":banner,
 			"footer-com":footer
-		}
-	}
+		},
+	
+}
 </script>
 
 <style>
