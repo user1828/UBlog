@@ -1,45 +1,41 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Home from '@/components/home'
+/* tp朋友圈 */
 import my from '@/components/Friends/my'
 import mydynamic from '@/components/Friends/mydynamic'
 import focus from '@/components/Friends/focus'
 import discuss from '@/components/Friends/discuss'
+/* lst发布组件 */
+import Release from '@/components/mysetting/release'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     // {
     //   path : "/",
-    //   redirect :"/home"
+    //   redirect :"/release"
     // },
-    // {
-    //   path: '/home',
-    //   name: 'home',
-    //   component: Home
-    // },
-    // {
-    //   path:"**",
-    //   component:Home
-    // }
+    {
+      path: '/release',
+      name: 'release',
+      component: Release
+    },
     {
       path:"/my",
       name:"my",
       component:my,
-      children:[
+        children:[
+          {
+          path:"/mydynamic",
+          name:"mydynamic",
+          component:mydynamic,
+        },
         {
-        path:"/mydynamic",
-        name:"mydynamic",
-        component:mydynamic,
-      },
-      {
-        path:"/focus",
-        name:"focus",
-        component:focus
-      }
-    ]
-     
-
+          path:"/focus",
+          name:"focus",
+          component:focus
+        }
+      ]
     },
     {
       path:"/discuss",

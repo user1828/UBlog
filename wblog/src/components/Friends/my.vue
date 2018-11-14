@@ -159,7 +159,7 @@ export default {
             }],
             list:[
                 {
-                    name:"/",
+                    name:"/release",
                     title:"发布朋友圈动态"
                 },
                
