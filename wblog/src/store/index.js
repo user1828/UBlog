@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
+/* lxstore */
+import lx from "./lx" 
 Vue.use(Vuex)
 
 // 公共状态
@@ -23,11 +25,15 @@ const getters = {
 
 }
 
+
 const store = new Vuex.Store({
   state,
   actions,
   mutations,
   getters,
+  modules:{
+    lx,
+  }
 })
 
 export default store
