@@ -1,6 +1,5 @@
 import Vue from "vue";
 import Vuex from "vuex";
-<<<<<<< HEAD
 import axios from "axios";
 Vue.use(Vuex)
 
@@ -32,41 +31,3 @@ const store = new Vuex.Store({
 })
 
 export default store
-
-=======
-// import active from "./actions"
-// import coiling from "./coiling"
-Vue.use(Vuex);
-
-const state = {
-	
-};
-
-
-const mutations = {
-	
-};
-
-
-const actions = {
-	
-};
-
-const getters = {
-	
-};
-
-
-const Store = new Vuex.Store({
-	state,
-	mutations,
-	actions,
-	getters,
-	modules:{
-
-	}
-});
-
-
-export default Store;
->>>>>>> wcy

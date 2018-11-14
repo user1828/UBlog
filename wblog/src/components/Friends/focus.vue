@@ -51,7 +51,7 @@ export default {
         data(){
             return{
                 arr:[
-                    "../../../static/img/u=3797481993,1929347741&fm=27&gp=01@3x.png",
+                    "../../../static/img/touxiang@2x.png",
                     "../../../static/img/u=3797481993,1929347741&fm=27&gp=01@3x.png",
                     "../../../static/img/u=3797481993,1929347741&fm=27&gp=01@3x.png",
                 ]
