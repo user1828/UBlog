@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+<<<<<<< HEAD
 /* tp朋友圈 */
 import my from '@/components/Friends/my'
 import mydynamic from '@/components/Friends/mydynamic'
@@ -8,6 +9,12 @@ import focus from '@/components/Friends/focus'
 import discuss from '@/components/Friends/discuss'
 /* lst发布组件 */
 import Release from '@/components/mysetting/release'
+=======
+import registerhome from '../components/register/registerhome.vue'
+import message from '../components/register/message.vue'
+import interest from '../components/register/interest.vue'
+import login from '../components/login/login.vue'
+>>>>>>> hl
 
 /* wcy首页组件 */
 import Home from '@/components/home/home'
@@ -33,6 +40,7 @@ export default new Router({
       redirect :"/home"
     },
     {
+<<<<<<< HEAD
 
       path: '/home',
       name: 'home',
@@ -101,5 +109,27 @@ export default new Router({
 			name:"more",
 			component:More
 		}
+=======
+			path:"/registerhome", 
+			name:"registerhome",
+			component:registerhome
+		},
+		{
+			path:'/message',
+			name:'message',
+			component:message
+		},
+		{
+			path:'/interest',
+			name:'interest',
+			component:interest
+		},
+		{
+			path:"/login",
+			name:"login",
+			component:login
+		}
+		
+>>>>>>> hl
   ]
 })
