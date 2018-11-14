@@ -1,6 +1,6 @@
 <template>
 	<div class="banner">
-		<img src="../../../static/img/banner.png" @click="handleActions()">
+		<img src="../../../static/img/homebanner.png" @click="handleActions()">
 	</div>
 </template>
 
@@ -23,3 +23,6 @@
 		margin-top:-1.7rem;
 	}
 </style>
+
+
+

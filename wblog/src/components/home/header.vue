@@ -3,8 +3,8 @@
 		<div class="title">
 			<div class="logo">
 				<div>UBlog</div>
-				<i class="iconfont icon-xiaoxi" @click="handleMy()"></i>
-				<i class="iconfont icon-wode"></i>
+				<i class="iconfont icon-xiaoxi"></i>
+				<i class="iconfont icon-wode" @click="handleMy()"></i>
 			</div>
 			<ul>
 				<li @click="handleTui()">推荐</li>
@@ -15,7 +15,7 @@
 		</div>
 	</div>
 </template>
-
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 <script>
 	export default{
 		methods:{
@@ -23,7 +23,7 @@
 				this.$router.push("/")
 			},
 			handleFriend(){
-				this.$router.push("/")
+				this.$router.push("/focus")
 			},
 			handleActions(){
 				this.$router.push("/actions")
@@ -34,6 +34,9 @@
 			handleMy(){
 				this.$router.push("/my")
 			}
+		},
+		mounted(){
+			
 		}
 	}
 </script>
@@ -44,14 +47,12 @@
 		background:#27d1d0;		
 		width:100%;
 		padding-top:.4rem;
-
-		
 	}
 	.logo{
 		display:flex;
 	}
 	.logo>div{
-		margin-left:3.1rem;
+		margin-left:3.5rem;
 		color:#fff;
 		font-size:16px;
 		line-hieght:.6rem;
