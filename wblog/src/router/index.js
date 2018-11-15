@@ -24,8 +24,7 @@ import lx_addfriend from '@/components/lx/lx_addfriend'
 import lx_addtab from '@/components/lx/lx_addtab'
 import lx_search from '@/components/lx/lx_search'
 import lx_see from '@/components/lx/lx_see'
-
-
+import data from "@/components/data"
 Vue.use(Router)
 
 export default new Router({
