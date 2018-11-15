@@ -29,18 +29,20 @@ const actions = {
 const mutations = {
     handleAdd(state,params){
       state.arr = params;
-      // console.log(params);
+      var arr = [];
+      var arrtime = [];
       params.map((item)=>{
         // console.log(item)
         // var list = [];
         // list = item.list;
-
         state.imgs.push(item.list);
-        state.commentsl.push(item.list[1].commentslist[1]);
+        arr.push(item.list[1].commentslist[1])
        
-        state.comments.push(item.list[2])
-        console.log(item.list[2])
+        arrtime.push(item.list[2])
       })
+      // console.log(arrtime);
+      state.comments = arrtime
+      state.commentsl = arr
     }
 }
 
