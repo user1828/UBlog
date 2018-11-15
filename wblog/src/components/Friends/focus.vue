@@ -1,9 +1,10 @@
 <template>
 <div>
+  
      <div class="focus" v-for="(item,index) in arr">
                 <div >
-                    <h2>{{}}</h2>
-                    <p class="pl"></p>
+                    <h2>今天</h2>
+                    <p class="pl">{{comments[index].comments}}</p>
                 </div>
                 <div>
                     <ul>
@@ -132,7 +133,8 @@ export default {
       ...Vuex.mapActions({
           handleAdd:"handleAdd"
       })
-  }
+  },
+
 }
 </script>
 <style scoped>

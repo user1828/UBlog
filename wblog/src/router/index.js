@@ -79,7 +79,8 @@ export default new Router({
         {
           path:"/focus",
           name:"focus",
-          component:focus
+          component:focus,
+          meta:{keepAlive:true}
         }
       ]
     },
