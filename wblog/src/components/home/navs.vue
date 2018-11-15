@@ -83,11 +83,9 @@
 	.tab{
 		width: 100%;
 		overflow: hidden;
-		margin-top:1.6rem;
-		
+		margin-top:1.6rem;		
 	}
     .tab_content{		
-
 		display: flex;
 		padding-left:.24rem;
 		color:#666;
