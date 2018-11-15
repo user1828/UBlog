@@ -6,8 +6,12 @@ import my from '@/components/Friends/my'
 import mydynamic from '@/components/Friends/mydynamic'
 import focus from '@/components/Friends/focus'
 import discuss from '@/components/Friends/discuss'
+
 /* lst发布组件 */
 import Release from '@/components/mysetting/release'
+import Setting from '@/components/mysetting/setting'
+
+/* hl登录注册组件 */
 import registerhome from '../components/register/registerhome.vue'
 import message from '../components/register/message.vue'
 import interest from '../components/register/interest.vue'
@@ -19,7 +23,7 @@ import Actions from "@/components/actions/actions"
 import Coiling from "@/components/coiling/coiling"
 import More from "@/components/actions/more"
 
-
+/* lx搜索好友组件 */
 import lx_addfriend from '@/components/lx/lx_addfriend'
 import lx_addtab from '@/components/lx/lx_addtab'
 import lx_search from '@/components/lx/lx_search'
@@ -45,6 +49,11 @@ export default new Router({
       path: '/release',
       name: 'release',
       component: Release,
+    },
+    {
+      path: '/setting',
+      name: 'setting',
+      component: Setting,
     },
     {
       path: '/lx_addfriend',
