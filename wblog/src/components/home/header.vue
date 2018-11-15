@@ -2,9 +2,12 @@
 	<div id="header">
 		<div class="title">
 			<div class="logo">
+				<div></div>
 				<div>UBlog</div>
-				<i class="iconfont icon-xiaoxi" @click="handleMy()"></i>
-				<i class="iconfont icon-wode"></i>
+				<div>
+					<i class="iconfont icon-xiaoxi"></i>
+					<i class="iconfont icon-wode" @click="handleMy()"></i>
+				</div>
 			</div>
 			<ul>
 				<li @click="handleTui()">推荐</li>
@@ -15,7 +18,7 @@
 		</div>
 	</div>
 </template>
-
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 <script>
 	export default{
 		methods:{
@@ -23,7 +26,7 @@
 				this.$router.push("/")
 			},
 			handleFriend(){
-				this.$router.push("/")
+				this.$router.push("/focus")
 			},
 			handleActions(){
 				this.$router.push("/actions")
@@ -34,6 +37,9 @@
 			handleMy(){
 				this.$router.push("/my")
 			}
+		},
+		mounted(){
+			
 		}
 	}
 </script>
@@ -44,35 +50,28 @@
 		background:#27d1d0;		
 		width:100%;
 		padding-top:.4rem;
-
-		
 	}
 	.logo{
 		display:flex;
+		justify-content: space-between;
+		padding:0 .3rem;
 	}
 	.logo>div{
-		margin-left:3.1rem;
+		width:1rem;
 		color:#fff;
 		font-size:16px;
 		line-hieght:.6rem;
 		font-weight:bold;
 	}
-	.logo>i:nth-of-type(1){
-		color:#fff;
-		position:absolute;
-		right:1.14rem;
-
-	}
-	.logo>i:nth-of-type(2){
-		color:#fff;
-		position:absolute;
-		right:.25rem;
+	.logo div:nth-child(3){
+		display:flex;
+		justify-content: space-between;
 	}
 	#header ul{
 		display:flex;
 		justify-content: space-between;
 		align-items:center;
-		padding:0 35px;
+		padding:0 .6rem;
 		color:#fff;
 		margin-top:.4rem;
 		font-weight:bold;
