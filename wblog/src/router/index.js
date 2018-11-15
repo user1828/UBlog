@@ -6,7 +6,7 @@ import my from '@/components/Friends/my'
 import mydynamic from '@/components/Friends/mydynamic'
 import focus from '@/components/Friends/focus'
 import discuss from '@/components/Friends/discuss'
-
+import someone from '@/components/Friends/someone'
 /* lst发布组件 */
 import Release from '@/components/mysetting/release'
 import Setting from '@/components/mysetting/setting'
@@ -28,8 +28,7 @@ import lx_addfriend from '@/components/lx/lx_addfriend'
 import lx_addtab from '@/components/lx/lx_addtab'
 import lx_search from '@/components/lx/lx_search'
 import lx_see from '@/components/lx/lx_see'
-
-
+import data from "@/components/data"
 Vue.use(Router)
 
 export default new Router({
@@ -132,7 +131,11 @@ export default new Router({
 			path:"/login",
 			name:"login",
 			component:login
-		}
-		
+    },
+    {
+      path:"/someone",
+      name:"someone",
+      component:someone
+    }
   ]
 })
