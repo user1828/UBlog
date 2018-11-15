@@ -131,7 +131,11 @@ export default new Router({
 			path:"/login",
 			name:"login",
 			component:login
+<<<<<<< HEAD
+		},
+=======
     },
+>>>>>>> 1ad1a532b64c71bd0c1728ed5258aeffd726deaa
     {
       path:"/someone",
       name:"someone",
