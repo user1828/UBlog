@@ -6,6 +6,7 @@ import my from '@/components/Friends/my'
 import mydynamic from '@/components/Friends/mydynamic'
 import focus from '@/components/Friends/focus'
 import discuss from '@/components/Friends/discuss'
+import someone from '@/components/Friends/someone'
 /* lst发布组件 */
 import Release from '@/components/mysetting/release'
 import registerhome from '../components/register/registerhome.vue'
@@ -123,7 +124,11 @@ export default new Router({
 			path:"/login",
 			name:"login",
 			component:login
-		}
-		
+		},
+    {
+      path:"/someone",
+      name:"someone",
+      component:someone
+    }
   ]
 })
