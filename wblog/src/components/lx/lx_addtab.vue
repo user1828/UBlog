@@ -1,64 +1,26 @@
 <template>
     <div>
-        <header-com></header-com>
+        <header-com>
+            <span slot = "title">添加好友</span>
+        </header-com>
         <section>
             <h3>
                 <i class="iconfont icon-icon--"></i>
                 <span>选择标签</span>
             </h3>
             <div class="tabdet">
-                <div class="tab-com">
+                <div  :class= "item.status==0? tabclass:tabaclass"
+                 v-for="(item,index) in tabarr" @click="handleSeltab(index)">
                     <p>
-                        <i class="iconfont icon-xiaoyuan-"></i>
+                        <i :class = 'item.cl' ></i>
                     </p>
-                    <div>考研党</div>
-                </div>
-                <div class="tab-com">
-                    <p>
-                        <i class="iconfont icon-prada_beibao"></i>
-                    </p>
-                    <div>旅行</div>
-                </div>
-                <div class="tab-com tabclick"  @click="handleGo()">
-                    <p>
-                        <i class="iconfont icon-youxi2"></i>
-                    </p>
-                    <div>游戏</div>
-                </div>
-                <div class="tab-com">
-                    <p>
-                        <i class="iconfont icon-weibiaoti-1"></i>
-                    </p>
-                    <div>健身</div>
-                </div>
-                <div class="tab-com">
-                    <p>
-                        <i class="iconfont icon-yinle1"></i>
-                    </p>
-                    <div>音乐</div>
-                </div>
-                <div class="tab-com">
-                    <p>
-                        <i class="iconfont icon-cet
-"></i>
-                    </p>
-                    <div>四六级</div>
-                </div>
-                <div class="tab-com">
-                    <p>
-                        <i class="iconfont icon-dianying1"></i>
-                    </p>
-                    <div>电影</div>
-                </div>
-                <div class="tab-com">
-                    <p>
-                        <i class="iconfont icon-zhaoxiangji"></i>
-                    </p>
-                    <div>摄影</div>
+                    <div>{{item.name}}</div>
                 </div>
             </div>
         </section>
-        <b_button></b_button>
+        <b_button>
+            <div class="btn" slot="title" @click="handleGo()">OK!</div>
+        </b_button>
     </div>
 </template>
 
@@ -132,17 +94,38 @@
 <script>
 import header from './common/header';
 import b_button from './common/b_button';
+import Vuex from "vuex";
 
 export default {
+    data(){
+        return{
+            tabclass:"tab-com",
+            tabaclass : "tab-com tabclick",
+        }
+    },
     components:{
         "header-com":header,
         "b_button":b_button
     },
     methods:{
+        ...Vuex.mapActions({
+            getTabs:"lx/getTabs",
+            handleSeltab:"lx/handleSeltab",
+            handleSeltabarr:"lx/handleSeltabarr"
+        }),
         handleGo(){
-            this.$router.push("/lx_search");
-            console.log("111")
+            this.$router.push("/lx_addfriend");
+            // console.log("111")
         }
-    }
+    },
+    created(){
+        this.getTabs();
+    },
+    computed:{
+        ...Vuex.mapState({
+            tabarr:state=>state.lx.tabarr,
+        })
+    },
+    
 }
 </script>

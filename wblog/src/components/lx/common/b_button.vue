@@ -1,6 +1,6 @@
 <template>
     <div id="b_button-com">
-        <div class="btn">搜索</div>
+        <slot name="title"></slot>
     </div>
 </template>
 

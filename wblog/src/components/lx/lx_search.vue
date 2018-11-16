@@ -1,6 +1,8 @@
 <template>
     <div>
-        <header-com></header-com>
+        <header-com>
+            <span slot = "title">搜索结果</span>
+        </header-com>
         <section id="search-com">
             <dl class="people" @click="handleGo()">
                 <dt>
