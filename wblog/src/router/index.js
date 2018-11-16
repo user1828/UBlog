@@ -9,6 +9,9 @@ import discuss from '@/components/Friends/discuss'
 import someone from '@/components/Friends/someone'
 /* lst发布组件 */
 import Release from '@/components/mysetting/release'
+import information from '@/components/mysetting/information'
+import setting from '@/components/mysetting/setting'
+import account from '@/components/mysetting/account'
 import registerhome from '../components/register/registerhome.vue'
 import message from '../components/register/message.vue'
 import interest from '../components/register/interest.vue'
@@ -48,6 +51,23 @@ export default new Router({
       name: 'release',
       component: Release,
     },
+		{
+			path: '/information',
+			name: 'information',
+			component: information,
+		},
+			
+			{
+			path: '/setting',
+			name: 'setting',
+			component: setting,
+			
+		},
+		{
+			path: '/account',
+			name: 'account',
+			component: account,
+		},
     {
       path: '/lx_addfriend',
       name: 'lx_addfriend',
