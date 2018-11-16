@@ -3,9 +3,9 @@
     <div class="navigation"></div>
     <!-- 头部 -->
     <header>
-      <i class="iconfont icon-zuojiantou"></i>
+      <i class="iconfont icon-zuojiantou" @click="handleBack()"></i>
       <p>{{headerTitle}}</p>
-      <p></p>
+      <div class="kong"></div>
     </header>
   </div>
 </template>
@@ -17,6 +17,12 @@ export default {
       headerTitle : "记录中"
     }
   },
+	methods:{
+		handleBack(){
+			// console.log(11)
+			this.$router.back(1);
+		}
+	}
 
 }
 </script>
@@ -26,6 +32,7 @@ export default {
 .navigation{
   height:.44rem;
   width:100%;
+	background: #33CCCC;
 }
 div>header{
   height:.84rem;
@@ -46,6 +53,10 @@ div>header > p {
   font-family:"PingFangSC-Regular";
   font-weight:400;
   color:rgba(255,255,255,1);
+}
+header>.kong{
+	height:.6rem;
+	width:.6rem;
 }
 </style>
 
