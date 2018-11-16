@@ -17,7 +17,7 @@
           itemList:[
 			  {
 				'title':'科技',
-				src:"../../../static/img/keji_icon@2x.png"
+				"src":"../../../static/img/keji_icon@2x.png"
 			  },
 			  {
 				'title':'生活',
@@ -59,22 +59,24 @@
         InitTabScroll(){
           let width=0
           for (let  i = 0; i <this.itemList.length; i++) {
-              width+=this.$refs.tabitem[0].getBoundingClientRect().width; //getBoundingClientRect() 返回元素的大小及其相对于视口的位置
-          }
+              width +=this.$refs.tabitem[0].getBoundingClientRect().width; //getBoundingClientRect() 返回元素的大小及其相对于视口的位置
+					}
           this.$refs.tabWrapper.style.width=width+'px'
-          this.$nextTick(()=>{
-              if (!this.scroll) {
+          // this.$nextTick(()=>{
+						// console.log(this.scroll);
+              // if (!this.scroll) {
                 this.scroll=new BScroll(this.$refs.tab, {
                   startX:0,
                   click:true,
                   scrollX:true,
                   scrollY:false,
                   eventPassthrough:'vertical'
-                });
-              }else{
-                this.scroll.refresh()
-              }
-          });
+								});
+								console.log(this.scroll);
+              // }else{
+              //   this.scroll.refresh()
+              // }
+          // });
         }
       }
     };
@@ -89,6 +91,7 @@
 		display: flex;
 		padding-left:.24rem;
 		color:#666;
+		overflow: hidden;
 	}
     .tab_item{
 		flex: 0 0 70px;

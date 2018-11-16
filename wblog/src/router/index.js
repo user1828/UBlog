@@ -9,8 +9,9 @@ import discuss from '@/components/Friends/discuss'
 import someone from '@/components/Friends/someone'
 /* lst发布组件 */
 import Release from '@/components/mysetting/release'
-import Setting from '@/components/mysetting/setting'
-
+import information from '@/components/mysetting/information'
+import setting from '@/components/mysetting/setting'
+import account from '@/components/mysetting/account'
 /* hl登录注册组件 */
 import registerhome from '../components/register/registerhome.vue'
 import message from '../components/register/message.vue'
@@ -23,18 +24,19 @@ import Actions from "@/components/actions/actions"
 import Coiling from "@/components/coiling/coiling"
 import More from "@/components/actions/more"
 
-/* lx搜索好友组件 */
+/* lx添加好友组件 */ 
 import lx_addfriend from '@/components/lx/lx_addfriend'
 import lx_addtab from '@/components/lx/lx_addtab'
 import lx_search from '@/components/lx/lx_search'
 import lx_see from '@/components/lx/lx_see'
-import data from "@/components/data"
+import lx_newfriend from '@/components/lx/lx_newfriend'
+import lx_newsee from '@/components/lx/lx_newsee'
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-
       path : "/",
       redirect :"/home"
     },
@@ -49,10 +51,27 @@ export default new Router({
       name: 'release',
       component: Release,
     },
+		{
+			path: '/information',
+			name: 'information',
+			component: information,
+		},
+			
+			{
+			path: '/setting',
+			name: 'setting',
+			component: setting,
+			
+		},
+		{
+			path: '/account',
+			name: 'account',
+			component: account,
+		},
     {
       path: '/setting',
       name: 'setting',
-      component: Setting,
+      component: setting,
     },
     {
       path: '/lx_addfriend',
@@ -132,15 +151,41 @@ export default new Router({
 			path:"/login",
 			name:"login",
 			component:login
-<<<<<<< HEAD
 		},
-=======
-    },
->>>>>>> 1ad1a532b64c71bd0c1728ed5258aeffd726deaa
     {
       path:"/someone",
       name:"someone",
       component:someone
+    },
+    {
+      path: '/lx_addfriend',
+      name: 'lx_addfriend',
+      component: lx_addfriend
+    },
+    {
+      path: '/lx_addtab',
+      name: 'lx_addtab',
+      component: lx_addtab
+    },
+    {
+      path: '/lx_search',
+      name: 'lx_search',
+      component: lx_search
+    },
+    {
+      path: '/lx_see',
+      name: 'lx_see',
+      component: lx_see
+    },
+    {
+      path:"/lx_newfriend",
+      name:'lx_newfriend',
+      component:lx_newfriend
+    },
+    {
+      path:"/lx_newsee",
+      name:'lx_newsee',
+      component:lx_newsee
     }
   ]
 })

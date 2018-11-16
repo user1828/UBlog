@@ -1,3 +1,9 @@
 export default {
-  name : "李想"   
+    tabarr:[],
+    searchfriend:{
+        name:'',
+        school:'',
+        subject:'',
+        stab:[]
+    }
 }

@@ -53,5 +53,9 @@ div>header > p {
   font-weight:400;
   color:rgba(255,255,255,1);
 }
+header>.kong{
+	height:.6rem;
+	width:.6rem;
+}
 </style>
 
