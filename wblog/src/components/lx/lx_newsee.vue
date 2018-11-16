@@ -1,7 +1,8 @@
 <template>
-    <div>
+     <div>
         <header-com>
-            <span slot="title">添加好友</span>
+            <span slot="title">详细信息</span>
+            <i class="iconfont icon-jiahao2 jia" slot="addfriend"></i>
         </header-com>
         <section id="see-com">
 
@@ -18,53 +19,52 @@
                     <i class="iconfont icon-nv2"></i>
                     <span>咔咔</span>
                 </div>
-                <p class="school">
+                <p class="school kuai">
                     <i class="iconfont icon-My"></i>
                     <b>学校信息：</b>
                     <span>北京大学  经济学</span>
                 </p>
-                <p class="tab">
+                <p class="tab kuai">
                     <i class="iconfont icon-biaoqian4"></i>
                     <b>标签：</b>
                     <span>旅行 音乐</span>
                 </p>
-                <p class="sign">
+                <p class="sign kuai">
                     <i class="iconfont icon-ganxingqu"></i>
                     <b>个性签名：</b>
                     <span>乐观面对每一天</span>
                 </p>
-                <p class="msg">
-                    <i class="iconfont icon-liuyan"></i>
-                    <b>留言：</b>
-                    <input type="text" value="很高兴认识你！"></input>
-                </p>
+                <div class="msg">
+                    <p class="liuyan">
+                        <i class="iconfont icon-qianbi"></i>
+                        <b>你好，我是小仙女。</b>
+                    </p>
+                    <!-- <p class="res">
+                        <div>回复</div> 
+                    </p> -->
+                </div>
             </div>
         </section>
         <b_button-com>
-            <div class="btn" slot="title">添加好友</div>
+            <div slot="title" class="btn">通过验证</div>
         </b_button-com>
-    </div> 
+     </div>
 </template>
 
 <script>
-import header from './common/header';
+import Header from './common/header';
 import b_button from './common/b_button';
 
 export default {
     components:{
-        "b_button-com":b_button,
-        "header-com":header
+        "header-com":Header,
+        "b_button-com":b_button
     }
 }
 </script>
 
 <style>
-    input{  
-        background:none; 
-        border:0px;  
-        outline:none; 
-    }
-    .see-t{
+     .see-t{
         position: relative;
     }
     .see-t .peoplebg{
@@ -108,22 +108,27 @@ export default {
     .see-b i{
         color: pink;
     }
-    .see-b p{
+    .see-b .kuai{
         min-height: .88rem;
         line-height: .38rem;
         padding:.25rem;
         color: #666;
         border-bottom: 2px solid #eee;
     }
-    .see-b p i{
+    .see-b kuai i{
         font-size: .38rem;
         color: #29D1D0;
     }
     .see-b span{
         padding-right: .15rem;
     }
-    .see-b .msg span{
-        display: block;
-        padding-left: .54rem;
+    .see-b .msg{
+        min-height: 1.67rem;
+        padding:.69rem 0 0 .25rem;
+        color: #666;
+        border-bottom: 2px solid #eee;
+    }
+    .msg p{
+        float: left;
     }
 </style>
