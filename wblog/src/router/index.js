@@ -32,6 +32,11 @@ import lx_see from '@/components/lx/lx_see'
 import lx_newfriend from '@/components/lx/lx_newfriend'
 import lx_newsee from '@/components/lx/lx_newsee'
 
+/* 通讯录组件*/
+import addressList from '@/components/addressList/addressList'//好友列表
+import chatList from '@/components/chatList/chatList'//聊天列表
+import dialogBox from '@/components/dialogBox/dialogBox'//对话框
+
 Vue.use(Router)
 
 export default new Router({
@@ -186,6 +191,21 @@ export default new Router({
       path:"/lx_newsee",
       name:'lx_newsee',
       component:lx_newsee
+    },
+    {
+      path: "/addressList",
+      name: "addressList",
+      component: addressList
+    },
+    {
+      path: "/chatList",
+      name: "chatList",
+      component: chatList
+    },
+    {
+      path: "/dialogBox",
+      name: "dialogBox",
+      component: dialogBox
     }
   ]
 })
