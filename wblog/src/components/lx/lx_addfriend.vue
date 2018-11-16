@@ -17,6 +17,7 @@
             <p class="add">添加标签
                 <i class="iconfont icon-jiahao2fill"  @click="handleGo()"></i>
             </p>
+            
         </section>
         <b_button-com></b_button-com>
     </div>
@@ -55,7 +56,7 @@
 <script>
 import Header from "./common/header";
 import b_button from './common/b_button';
-
+import Vuex from "vuex"
 export default {
     components:{
         "header-com":Header,
@@ -65,6 +66,11 @@ export default {
          handleGo(){
              this.$router.push("/lx_addtab");
          }
+    },
+    computed:{
+        ...Vuex.mapState({
+            name : state=>state.lx.name
+        })
     }
 }
 </script>

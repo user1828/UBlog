@@ -28,7 +28,7 @@
 				this.$router.push("/tel")
 			},
 			handleAdd(){
-				this.$router.push("/add")
+				this.$router.push("/release")
 			}
 		}
 	}

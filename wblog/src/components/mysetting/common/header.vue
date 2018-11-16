@@ -3,8 +3,8 @@
     <div class="navigation"></div>
     <!-- 头部 -->
     <header>
-      <i class="iconfont icon-zuojiantou"></i>
-      <p>{{headerTitle}}</p>
+      <i class="iconfont icon-zuojiantou" @click="handleBack()"></i>
+      <slot name="title"></slot>
       <p></p>
     </header>
   </div>
@@ -17,6 +17,11 @@ export default {
       headerTitle : "记录中"
     }
   },
+  methods:{
+    handleBack(){
+      this.$router.back()
+    }
+  }
 
 }
 </script>
@@ -26,6 +31,7 @@ export default {
 .navigation{
   height:.44rem;
   width:100%;
+  background-color:#33CCCC;
 }
 div>header{
   height:.84rem;
