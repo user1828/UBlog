@@ -25,10 +25,12 @@
 				this.$router.push("/home")
 			},
 			handleTel(){
-				this.$router.push("/tel")
+				//{path:"/addressList",query:{name:"通讯录"}}
+				this.$router.push({path:"/addressList",query:{name:"通讯录"}})
 			},
 			handleAdd(){
-				this.$router.push("/add")
+				//{path:"/chatList",query:{name:"通讯录"}}
+				this.$router.push({path:"/chatList",query:{name:"消息"}})
 			}
 		}
 	}

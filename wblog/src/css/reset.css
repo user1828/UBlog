@@ -6,6 +6,8 @@ fieldset, c{ border:none; }
 
 img{display: block;}
 
+input,a{border: 0;}
+
 address, caption, cite, code, dfn, th, var { font-style:normal; font-weight:normal; }
 
 ul, ol ,li{ list-style:none; }
