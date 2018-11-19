@@ -26,6 +26,15 @@ import lx_addtab from '@/components/lx/lx_addtab'
 import lx_search from '@/components/lx/lx_search'
 import lx_see from '@/components/lx/lx_see'
 import data from "@/components/data"
+/* wb */
+import art from '@/components/events/art';
+import exam from '@/components/events/exam';
+import kepu from '@/components/events/kepu';
+import Movie from '@/components/events/Movie';
+import part from '@/components/events/part';
+import fashiun from '@/components/events/fashiun';
+import exercise from '@/components/events/exercise';
+import seikatsu from '@/components/events/seikatsu';
 Vue.use(Router)
 
 export default new Router({
@@ -124,15 +133,51 @@ export default new Router({
 			path:"/login",
 			name:"login",
 			component:login
-<<<<<<< HEAD
 		},
-=======
-    },
->>>>>>> 1ad1a532b64c71bd0c1728ed5258aeffd726deaa
     {
       path:"/someone",
       name:"someone",
       component:someone
+    },
+    {
+      path:"/art",
+      name:"art",
+      component:art
+    },
+    {
+      path:"/exam",
+      name:"exam",
+      component:exam
+    },
+    {
+      path:"/kepu",
+      name:"kepu",
+      component:kepu
+    },
+    {
+      path:"/Movie",
+      name:"Movie",
+      component:Movie
+    },
+    {
+      path:"/part",
+      name:"part",
+      component:part
+    },
+    {
+      path:"/fashiun",
+      name:"fashiun",
+      component:fashiun
+    },
+    {
+      path:"/exercise",
+      name:"exercise",
+      component:exercise
+    },
+    {
+      path:"/seikatsu",
+      name:"seikatsu",
+      component:seikatsu
     }
   ]
 })

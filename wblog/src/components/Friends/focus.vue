@@ -122,16 +122,16 @@ export default {
   },
   computed:{
       ...Vuex.mapState({
-          arr:state=>state.arr,
-          imgs:state=>state.imgs,
-          commentsl:state=>state.commentsl,
-          comments:state=>state.comments
+          arr:state=>state.tp.arr,
+          imgs:state=>state.tp.imgs,
+          commentsl:state=>state.tp.commentsl,
+          comments:state=>state.tp.comments
 
       })
   },
   methods:{
       ...Vuex.mapActions({
-          handleAdd:"handleAdd"
+          handleAdd:"tp/handleAdd"
       })
   },
 
