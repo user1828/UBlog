@@ -29,8 +29,9 @@
 				this.$router.push({path:"/addressList",query:{name:"通讯录"}})
 			},
 			handleAdd(){
+				// this.$router.push("/release")
 				//{path:"/chatList",query:{name:"通讯录"}}
-				this.$router.push({path:"/chatList",query:{name:"消息"}})
+				this.$router.push({path:"/release",query:{name:"记录中"}})
 			}
 		}
 	}

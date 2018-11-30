@@ -59,9 +59,12 @@
 	.logo>div{
 		width:1rem;
 		color:#fff;
-		font-size:16px;
-		line-hght:.6rem;
+		font-size:.4rem;
+		line-height:.6rem;
 		font-weight:bold;
+	}
+	.logo>div i{
+		font-size:.3rem;
 	}
 	.logo div:nth-child(3){
 		display:flex;

@@ -1,9 +1,12 @@
 <template>
 	<div class="setting">
-		<releaseHeader-com></releaseHeader-com>
+		<releaseHeader-com>
+			<p slot="title">设置</p>
+		</releaseHeader-com>
+			
 		<ul>
 			<li @click="handleforward()">
-				<i class="iconfont icon-icon-" @click="handleBack()"></i>
+				<!-- <i class="iconfont icon-icon-" @click="handleBack()"></i> -->
 				<p>账号切换</p>
 				<i class="iconfont icon-youjiantou"></i>
 			</li>
@@ -33,29 +36,30 @@
 </template>
 
 <script>
-	import releaseHeader from "./common/header";
-	export default{
-		data(){
-			
-				
+import releaseHeader from "./common/header";
+export default{
+	data(){
+		return {
+
+		}
+	},
+	methods:{
+		handleforward(){
+			this.$router.push("/account")
 		},
-		methods:{
-			handleforward(){
-				this.$router.push("/account")
-			},
-			handleGo(){
-				this.$router.push("/login")
-			},
-			handleBack(){
-				this.$router.back()
-			}
+		handleGo(){
+			this.$router.push("/login")
 		},
-		
-		components:{
-			"releaseHeader-com":releaseHeader
-		},
-		
+		handleBack(){
+			this.$router.back()
+		}
+	},
+	components:{
+		"releaseHeader-com":releaseHeader
 	}
+	
+}
+	
 </script>
 
 <style scoped>

@@ -12,6 +12,7 @@ import Release from '@/components/mysetting/release'
 import information from '@/components/mysetting/information'
 import setting from '@/components/mysetting/setting'
 import account from '@/components/mysetting/account'
+/* hl登录注册组件 */
 import registerhome from '../components/register/registerhome.vue'
 import message from '../components/register/message.vue'
 import interest from '../components/register/interest.vue'
@@ -28,7 +29,6 @@ import lx_addfriend from '@/components/lx/lx_addfriend'
 import lx_addtab from '@/components/lx/lx_addtab'
 import lx_search from '@/components/lx/lx_search'
 import lx_see from '@/components/lx/lx_see'
-
 import lx_newfriend from '@/components/lx/lx_newfriend'
 import lx_newsee from '@/components/lx/lx_newsee'
 
@@ -167,36 +167,7 @@ export default new Router({
       name:"someone",
       component:someone
     },
-    {
-      path: '/lx_addfriend',
-      name: 'lx_addfriend',
-      component: lx_addfriend
-    },
-    {
-      path: '/lx_addtab',
-      name: 'lx_addtab',
-      component: lx_addtab
-    },
-    {
-      path: '/lx_search',
-      name: 'lx_search',
-      component: lx_search
-    },
-    {
-      path: '/lx_see',
-      name: 'lx_see',
-      component: lx_see
-    },
-    {
-      path:"/lx_newfriend",
-      name:'lx_newfriend',
-      component:lx_newfriend
-    },
-    {
-      path:"/lx_newsee",
-      name:'lx_newsee',
-      component:lx_newsee
-    },
+   
     {
       path: "/addressList",
       name: "addressList",

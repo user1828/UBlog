@@ -19,6 +19,7 @@
             <p class="add">添加标签
                 <i class="iconfont icon-jiahao2fill" @click="handleGo(),handlexinxi(obj)"></i>
             </p>
+            
         </section>
         <b_button-com>
             <div class="btn" slot="title" @click="handlexinxi(obj),handlesearch(obj),handlesGo()">搜索</div>
@@ -61,8 +62,7 @@
 <script>
 import Header from "./common/header";
 import b_button from './common/b_button';
-import Vuex from 'vuex';
-
+import Vuex from "vuex"
 export default {
     data(){
         return{

@@ -2,9 +2,10 @@ import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
 /* lxstore */
-import lx from "./lx"
 import tp from "./tp";
 import events from "./events";
+import lx from "./lx" 
+import lst from "./lst" 
 Vue.use(Vuex)
 
 // 公共状态
@@ -86,7 +87,8 @@ const store = new Vuex.Store({
   modules:{
     lx,
     tp,
-    events
+    events,
+    lst,
   }
 })
 

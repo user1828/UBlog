@@ -1,6 +1,8 @@
 <template>
 	<div class="information">
-		<releaseHeader-com></releaseHeader-com>
+		<releaseHeader-com>
+			<p slot="title">个人信息</p>
+		</releaseHeader-com>
 		<ul>
 			<li v-for="(item,index) in list">
 				<p>{{item.name}}</p>
