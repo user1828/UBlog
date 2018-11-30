@@ -3,6 +3,8 @@ import Vuex from "vuex";
 import axios from "axios";
 /* lxstore */
 import lx from "./lx"
+import tp from "./tp";
+import events from "./events";
 Vue.use(Vuex)
 
 // 公共状态
@@ -15,6 +17,7 @@ const state = {
   imgs: [],
   commentsl: [],
   comments: []
+    
 }
 
 // 完成业务逻辑
@@ -36,6 +39,8 @@ const actions = {
     })
   }
 
+ 
+  
 }
 
 // 对数据进行操作
@@ -62,6 +67,8 @@ const mutations = {
       state.letters.push(String.fromCharCode((65 + i)));
     }
   }
+    
+    
 }
 
 // 用于计算属性
@@ -75,8 +82,11 @@ const store = new Vuex.Store({
   actions,
   mutations,
   getters,
-  modules: {
+  axios,
+  modules:{
     lx,
+    tp,
+    events
   }
 })
 

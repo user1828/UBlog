@@ -37,6 +37,16 @@ import addressList from '@/components/addressList/addressList'//好友列表
 import chatList from '@/components/chatList/chatList'//聊天列表
 import dialogBox from '@/components/dialogBox/dialogBox'//对话框
 
+import data from "@/components/data"
+/* wb */
+import art from '@/components/events/art';
+import exam from '@/components/events/exam';
+import kepu from '@/components/events/kepu';
+import Movie from '@/components/events/Movie';
+import part from '@/components/events/part';
+import fashiun from '@/components/events/fashiun';
+import exercise from '@/components/events/exercise';
+import seikatsu from '@/components/events/seikatsu';
 Vue.use(Router)
 
 export default new Router({
@@ -201,6 +211,46 @@ export default new Router({
       path: "/dialogBox",
       name: "dialogBox",
       component: dialogBox
+    },
+    {
+      path:"/art",
+      name:"art",
+      component:art
+    },
+    {
+      path:"/exam",
+      name:"exam",
+      component:exam
+    },
+    {
+      path:"/kepu",
+      name:"kepu",
+      component:kepu
+    },
+    {
+      path:"/Movie",
+      name:"Movie",
+      component:Movie
+    },
+    {
+      path:"/part",
+      name:"part",
+      component:part
+    },
+    {
+      path:"/fashiun",
+      name:"fashiun",
+      component:fashiun
+    },
+    {
+      path:"/exercise",
+      name:"exercise",
+      component:exercise
+    },
+    {
+      path:"/seikatsu",
+      name:"seikatsu",
+      component:seikatsu
     }
   ]
 })

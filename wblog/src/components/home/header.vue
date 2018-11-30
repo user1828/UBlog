@@ -60,7 +60,7 @@
 		width:1rem;
 		color:#fff;
 		font-size:16px;
-		line-height:.6rem;
+		line-hght:.6rem;
 		font-weight:bold;
 	}
 	.logo div:nth-child(3){
