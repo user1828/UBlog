@@ -74,11 +74,6 @@ export default new Router({
 			component: account,
 		},
     {
-      path: '/setting',
-      name: 'setting',
-      component: setting,
-    },
-    {
       path: '/lx_addfriend',
       name: 'lx_addfriend',
       component: lx_addfriend
@@ -162,36 +157,7 @@ export default new Router({
       name:"someone",
       component:someone
     },
-    {
-      path: '/lx_addfriend',
-      name: 'lx_addfriend',
-      component: lx_addfriend
-    },
-    {
-      path: '/lx_addtab',
-      name: 'lx_addtab',
-      component: lx_addtab
-    },
-    {
-      path: '/lx_search',
-      name: 'lx_search',
-      component: lx_search
-    },
-    {
-      path: '/lx_see',
-      name: 'lx_see',
-      component: lx_see
-    },
-    {
-      path:"/lx_newfriend",
-      name:'lx_newfriend',
-      component:lx_newfriend
-    },
-    {
-      path:"/lx_newsee",
-      name:'lx_newsee',
-      component:lx_newsee
-    },
+   
     {
       path: "/addressList",
       name: "addressList",

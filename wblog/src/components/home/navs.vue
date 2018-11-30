@@ -3,7 +3,7 @@
     <ul class="tab_content" ref="tabWrapper">
       <li class="tab_item" v-for="item in itemList" ref="tabitem">
           <img :src="item.src">
-		  <span>{{item.title}}</span>
+		      <span>{{item.title}}</span>
 		  
       </li>
     </ul>
@@ -63,9 +63,8 @@ export default {
         width += this.$refs.tabitem[0].getBoundingClientRect().width; //getBoundingClientRect() 返回元素的大小及其相对于视口的位置
       }
       this.$refs.tabWrapper.style.width = width + "px";
-      // this.$nextTick(()=>{
-      // console.log(this.scroll);
-      // if (!this.scroll) {
+      this.$nextTick(()=>{
+      if (!this.scroll) {
       this.scroll = new BScroll(this.$refs.tab, {
         startX: 0,
         click: true,
@@ -73,17 +72,16 @@ export default {
         scrollY: false,
         eventPassthrough: "vertical"
       });
-      console.log(this.scroll);
-      // }else{
-      //   this.scroll.refresh()
-      // }
-      // });
+      }else{
+        this.scroll.refresh()
+      }
+      });
     }
   }
 };
 </script>
 	
-  <style scoped>
+<style scoped>
 .tab{
   width: 100%;
   overflow: hidden;
@@ -93,21 +91,22 @@ export default {
   display: flex;
   padding-left: 0.24rem;
   color: #666;
-  overflow: hidden;
+  justify-content:space-around;
 }
 .tab_item {
 	display: block;
-  /* flex: 0 0 70px; */
-  width: 2.0rem;
+  width:3rem;
   height: 1.2rem;
+  text-align: center
 }
 .tab_item img {
   width: 0.8rem;
   height: 0.8rem;
   margin-left: 0.3rem;
 }
-.tab_item {
+.tab_item > span{
   display: block;
-  text-align: center;
+  width: 0.8rem;
+  margin-left: 0.3rem;
 }
 </style>

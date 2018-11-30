@@ -1,7 +1,7 @@
 <template>
   <div class="release">
     <releaseHeader-com>
-      <p slot="title">记录中</p>
+       <p slot="title">记录中</p>
     </releaseHeader-com>
     
     <!-- 分享发布 -->
@@ -144,7 +144,7 @@
 }
 .btn_box .visible_tab > p{
   color:#ccc;
-  padding-top:.35rem;
+  padding-top:.37rem;
   padding-left:.2rem;
   
 }
@@ -154,10 +154,10 @@
   border-radius:50%;
   border:1px solid #ccc;
   line-height:.29rem;
-  font-size:12px;
+  font-size:.25rem;
 }
 .btn_box .visible_tab > p > span{
-  font-size:.2rem;
+  font-size:.26rem;
 } 
 .btn_box .visible_tab > .tab_p_color > i{
   border-color:#33CCCC;
@@ -202,6 +202,7 @@ export default {
     })
   },
   created(){
+    
   },
   methods:{
     // 显示隐藏

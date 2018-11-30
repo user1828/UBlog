@@ -7,6 +7,7 @@ import store from './store'
 import "./js/rem"
 import "./css/reset.css"
 import '../static/wefont/iconfont.css'
+import "../static/wefont/iconfont.js"
 
 Vue.config.productionTip = false
 

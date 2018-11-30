@@ -25,7 +25,7 @@ export default {
     // this.$route.params.name
   },
   created() {
-    console.log(this.$route.query.name);
+    // console.log(this.$route.query.name);
     this.title = this.$route.query.name;
   },
   methods:{
