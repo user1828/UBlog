@@ -6,6 +6,7 @@ import tp from "./tp";
 import events from "./events";
 import lx from "./lx" 
 import lst from "./lst" 
+import hl from "./hl"
 Vue.use(Vuex)
 
 // 公共状态
@@ -89,6 +90,7 @@ const store = new Vuex.Store({
     tp,
     events,
     lst,
+		hl
   }
 })
 
