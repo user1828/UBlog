@@ -1,7 +1,7 @@
 <template>
   <div class="tab" ref="tab">
     <ul class="tab_content" ref="tabWrapper">
-      <li class="tab_item" v-for="item in itemList" ref="tabitem">
+      <li class="tab_item" v-for="(item,index) in itemList" ref="tabitem" @click="handleGo(index)">
           <img :src="item.src">
 		  <span>{{item.title}}</span>
 		  
@@ -75,7 +75,38 @@
                 this.scroll.refresh()
               }
           });
-        }
+        },
+				handleGo(index){
+					switch(index){
+						case 0:
+							this.$router.push("kepu");
+							break;
+						
+						case 1:
+							this.$router.push("seikasu");
+							break;
+						case 2:
+							this.$router.push("fashion");
+							break;
+						case 3:
+							this.$router.push("movie");
+							break;
+						case 4:
+							this.$router.push("art");
+							break;
+						case 5:
+							this.$router.push("exercise");
+							break;
+						case 6:
+							this.$router.push("part");
+							break;
+						case 7:
+							this.$router.push("exam");
+							break;
+						
+					}
+					
+				}
       }
     };
   </script>

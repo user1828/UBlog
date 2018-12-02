@@ -3,11 +3,12 @@ import Vuex from "vuex";
 import axios from "axios";
 /* lxstore */
 import lx from "./lx" 
+import wcy from "./wcy"
 Vue.use(Vuex)
 
 // 公共状态
 const state = {
-
+		coilingList:[]
 }
 
 // 完成业务逻辑
@@ -33,6 +34,7 @@ const store = new Vuex.Store({
   getters,
   modules:{
     lx,
+		wcy
   }
 })
 

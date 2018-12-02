@@ -146,6 +146,7 @@
 				<div class="image">
 					<img src="../../../static/img/headerimg.png" alt="">
 					<img src="../../../static/img/startbucks.jpg" alt="">
+					<i class="iconfont icon-biaoqian2"></i>
 				</div>
 				<div class="showpro">
 					<h2>玩转星巴克隐藏菜单</h2>
@@ -166,6 +167,7 @@
 				<div class="image">
 					<img src="../../../static/img/headerimg.png" alt="">
 					<img src="../../../static/img/startbucks.jpg" alt="">
+					<i class="iconfont icon-biaoqian2"></i>
 				</div>
 				<div class="showpro">
 					<h2>玩转星巴克隐藏菜单</h2>
@@ -224,13 +226,13 @@
 
 <style scoped>
 	.wrapper{
-		overflow:hidden;
+		/* overflow:hidden; */
 		height:100%;
 	}
 	#content{
 
 		height:6rem;
-		
+		margin-bottom:.2rem;
 		background:#faf7f9;
 	}
 	#content p{
@@ -242,6 +244,13 @@
 	.image{
 		position:relative;
 		padding-left:.24rem;
+	}
+	.content .image i{
+		font-size:.82rem;
+		color:#ee783b;
+		position:absolute;
+		top:-.41rem;
+		right:.78rem;
 	}
 	#content .image img:nth-child(1){
 		width:1.24rem;

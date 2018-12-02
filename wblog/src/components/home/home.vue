@@ -1,9 +1,12 @@
 <template>
 	<div id="home">
-		<header-com></header-com>
-		<banner-com></banner-com>
-		<navs-com></navs-com>
-		<content-com></content-com>
+		<div class="ddd">
+			<header-com></header-com>
+			<banner-com></banner-com>
+			<navs-com></navs-com>
+			<content-com></content-com>
+		</div>
+		
 		<footer-com></footer-com>
 		<router-view></router-view>
 	</div>
@@ -28,5 +31,7 @@
 </script>
 
 <style>
-	
+	.ddd{
+		margin-bottom:1.5rem;
+	}
 </style>
