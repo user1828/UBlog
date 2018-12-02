@@ -1,26 +1,33 @@
 <template>
 	<div class="footer">
-		<button>登录</button>
-		<button>注册</button>
+		<button @click="handleGo() ,handleLogin()">登录</button>
+		<button @click="handleTo()">注册</button>
 	</div>
 </template>
 
 <script>
+	import Vuex from "vuex";
 	export default {
-		data() {
-			return {
-				
-			};
+		methods:{
+			handleGo(){
+				this.$router.push("./home")
+			},
+			handleTo(){
+				this.$router.push("./registerhome")
+			},
+			...Vuex.mapActions({
+				handleLogin:"hl/handleLogin"
+			})
 		}
 	}
 </script>
-
 <style>
 .footer{
 	margin-top:.1rem;
+	position:fixed;
+	bottom:1.01rem;
 	display:flex;
 	flex-direction: column;
-	
 }
 .footer>button{
 	outline:none;

@@ -1,6 +1,6 @@
 <template>
 	<div class="header">
-		<i class="iconfont icon-fanhui"></i>	
+		<i class="iconfont icon-fanhui" @click="handleBack()"></i>	
 		<p>兴趣标签</p>
 		
 	</div>
@@ -12,6 +12,11 @@
 			return {
 				
 			};
+		},
+		methods:{
+			handleBack(){
+				this.$router.back();
+			}
 		}
 	}
 </script>

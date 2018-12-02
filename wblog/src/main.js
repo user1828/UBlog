@@ -9,6 +9,11 @@ import "./js/rem.js";
 // 引入icofont图标
 import "../static/wefont/iconfont.css"
 import "../static/wefont/iconfont.js"
+import "./css/animate.css"
+import verify from "vue-verify-plugin";
+	Vue.use(verify,{
+		blur:true
+	});
 
 Vue.config.productionTip = false
 new Vue({
