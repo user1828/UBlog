@@ -7,7 +7,7 @@
 		<div class="space"></div>
 		<div class="wrapper" ref="wrapper">
 			<div class="contents">
-				<div class="content" v-for="(item,index) in moreActive">
+				<div class="content" v-for="(item,index) in moreActive" @click="handleDetails(item.id)">
 					<div>
 						<img :src="item.src">
 					</div>
@@ -27,39 +27,53 @@
 	import Vuex from "vuex"
 	import BScroll from "better-scroll"
 	export default{
+		data(){
+			return{
+				
+			}
+		},
 		created(){
 			this.handleGetActions();
+			this.handleDetails()
 		},
 		computed:{
 			...Vuex.mapState({
-				moreActive:state=>state.moreActive
+				moreActive:state=>state.wcy.moreActive,
 			})
 		},
 		methods:{
 			handleBack(){
 				this.$router.push("/home")
 			},
+			handleDetails(){
+				this.$router.push("/home")
+			},
 			...	Vuex.mapActions({
-				handleGetActions:"handleGetActions"
-			})
-			
+				handleGetActions:"wcy/handleGetActions",
+				handleDetails:"wcy/handleDetails"
+			})			
 		},
-		mounted(){
-			this.scroll = new BScroll(this.$refs.wrapper,{
-				tab:true,
-				pullingUpLoad:true
-			})
-			
-			this.scroll.on("pullingUp",()=>{
-				
-			})
-		}
+// 		mounted(){
+// 			this.scroll = new BScroll(this.$refs.wrapper,{
+// 				tab:true,
+// 				pullingUpLoad:true
+// 			})
+// 			
+// 			this.scroll.on("pullingUp",()=>{
+// 				this.handleGetActions()
+// 			})
+// 		},
+// 		updated(){
+// 			this.scroll.refresh();
+// 			
+// 			this.scroll.finishPullUp();
+// 		}
 	}
 </script>
 
 <style>
 	.wrapper{
-		overflow:hidden;
+		/* overflow:hidden; */
 		height:100%;
 	}
 	.more-action{

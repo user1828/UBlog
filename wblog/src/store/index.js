@@ -7,6 +7,7 @@ import events from "./events";
 import lx from "./lx" 
 import lst from "./lst" 
 import hl from "./hl"
+import wcy from "./wcy"
 Vue.use(Vuex)
 
 // 公共状态
@@ -19,7 +20,8 @@ const state = {
   imgs: [],
   commentsl: [],
   comments: [],
-	contactsInitialList:[]
+	contactsInitialList:[],
+	coilingList:[]
 }
 
 // 完成业务逻辑
@@ -101,7 +103,8 @@ const store = new Vuex.Store({
     tp,
     events,
     lst,
-		hl
+		hl,
+		wcy 
   }
 })
 

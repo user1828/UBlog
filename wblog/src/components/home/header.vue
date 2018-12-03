@@ -16,6 +16,7 @@
 				<li @click="handleKa()">U卡卷</li>
 			</ul>
 		</div>
+		<div class="spaced"></div>
 	</div>
 </template>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
@@ -35,7 +36,10 @@
 				this.$router.push("/coiling")
 			},
 			handleMy(){
-				this.$router.push("/my")
+				this.$router.push("/")
+			},
+			handleCsrollHeight(){
+				
 			}
 		},
 		mounted(){
@@ -45,11 +49,19 @@
 </script>
 
 <style>
-	#header{
-		height:3.5rem;
+	.title{
+		height:1.8rem;
 		background:#27d1d0;		
 		width:100%;
 		padding-top:.4rem;
+		position:fixed;
+		top:0;
+		z-index:1000;
+	}
+	.spaced{
+		height:1.7rem;
+		background:#27d1d0;
+		margin-top:1.8rem;
 	}
 	.logo{
 		display:flex;

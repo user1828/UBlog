@@ -7,14 +7,20 @@
 	export default{
 		created(){
 // 			axios({
-// 				method:"put",
-// 				url:"http://localhost:3000/list/12",
+// 				method:"post",
+// 				url:"http://localhost:3000/coupon",
+// // 				headers:{
+// // 					'Content-type': 'application/x-www-form-urlencoded'
+// // 				},
 // 				data:{
-// 					address:"蓝天滑雪场",
-// 					time:"12月10日",
-// 					phone:"1455664",
-// 					money:"200元",
-// 					src:"../../../static/img/more.png"
+// 					coupon:{
+// 						name:"纷纷跟风狗滚",
+// 						shop_id:"5",
+// 						shop_name:"上午上午我我",
+// 						value:"80",
+// 						status:"0"
+// 					},
+// 					myhave:0
 // 				}
 // 			}).then((data)=>{
 // 				console.log(data)
