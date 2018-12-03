@@ -18,12 +18,20 @@ const state = {
   arr: [],
   imgs: [],
   commentsl: [],
-  comments: []
-    
+  comments: [],
+	contactsInitialList:[]
 }
 
 // 完成业务逻辑
 const actions = {
+  getFriends({commit},params){
+    axios({
+      method:"get",
+      url:"/ublog/myinfo/find_all_newfriend"
+    }).then((data)=>{
+      console.log(data);
+    })
+  },
   throughLetters({
     commit
   }, params) {
@@ -47,6 +55,9 @@ const actions = {
 
 // 对数据进行操作
 const mutations = {
+  getFriends(state,params){
+    state.friendList.push(params);
+  },
   handleAdd(state, params) {
     state.arr = params;
     var arr = [];

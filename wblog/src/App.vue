@@ -16,5 +16,7 @@ export default{
 </script>
 
 <style>
-
+@import "css/lib/weui.min.css";
+@import "css/lib/animate.css";
+@import "css/lib/iconfont.css";
 </style>
