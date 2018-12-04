@@ -34,14 +34,21 @@
 		<div>
 			<p>性别</p>
 			<div class="btn">
-				<div>
+				<!-- <div :class="sex"?"active":"" @click="handleClick()">
 					<i class="iconfont icon-nv1"></i>
 					<!-- <input type="radio" name="sex" value="女" v-model="inputGender"> -->
-				</div>
+				<!-- </div>
 				<div>
-					<i class="iconfont icon-nan"></i>
+					<i class="iconfont icon-nan"></i> -->
 					<!-- <input type="radio" name="sex" value="男" v-model="inputGender"> -->
-				</div>
+				<!-- </div> -->
+				
+				<ul class="box">
+					<li v-for="item,index in navs" :class="{checked:index==n}" @click="changeList(index)">
+						<img :src="item.sex">
+						<span>{{item.id}}</span>
+					</li>
+				</ul>
 			</div>
 		</div>
 		<div class="next">
@@ -73,14 +80,30 @@
 			},
 			...Vuex.mapActions({
 				handleAddd:"hl/handleAddd"
-			})
+			}),
+			changeList(index){
+			this.n = index;
+			}
 		},
 		data:function(){
 			return {
 				inputPhone:"",
 				inputPsd:"",
 				inputUser:"",
-				inputGender:""
+				inputGender:"",
+				n:2,
+				navs:[
+					{
+						sex:"../../../static/img/sex4.png",
+						id:"男",
+						status:0
+					},
+					{
+						sex:"../../../static/img/sex4.png",
+						id:"女",
+						status:1
+					}
+				]
 			}
 		},
 		verify:{
@@ -112,6 +135,8 @@
 .register>div:nth-child(2),.register>div:nth-child(4),.register>div:nth-child(7){
 	margin:0;
 	padding-left:1rem;
+	width:100%;
+	height:.1rem;
 }
 .register>div>p{
 	font-size:.32rem;
@@ -126,10 +151,6 @@
 }
 .register>div:nth-child(1){
 	margin-top:1.38rem;	
-}
-.register>div:nth-child(2){
-	width:100%;
-	height:.1rem;
 }
 .register>div:nth-child(5) input{
 	width:2.24rem;
@@ -178,6 +199,36 @@
 	left:.95rem;
 	font-size:.32rem;
 	color:#fff;
+}
+.box{
+	display:flex;
+}
+.box>li:nth-child(1){
+	margin-right:1.2rem;
+}
+.box>li:nth-child(2){
+	margin-top: .2rem;
+	margin-right:.8rem;
+}
+.box>li>span{
+	display:block;
+	margin-left:.4rem;
+}
+.box>li>img{
+	width:1rem;
+	height:1rem;
+}
+.box>li:nth-child(1){
+	margin-top:.2rem
+}
+
+li.checked>span{
+	color:#27d1d0;
+	font-size:.34rem;
+	font-weight:600;
+}
+li.checked>img{
+	border:2px #27d1d0 solid;
 }
 
 </style>
