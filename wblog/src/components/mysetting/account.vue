@@ -3,7 +3,7 @@
 		<releaseHeader-com></releaseHeader-com>
 		<ul>
 			<li>
-				account
+				
 			</li>
 		</ul>
 	</div>

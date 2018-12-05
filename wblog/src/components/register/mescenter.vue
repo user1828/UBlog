@@ -20,7 +20,7 @@
 			<p>验证码</p>
 			<div>
 				<input type="text">
-				<button>点击获取</button>
+				<button @click="handleYanZheng()">点击获取</button>
 			</div>
 		</div>
 		<div>
@@ -72,7 +72,8 @@
 				}
 			},
 			...Vuex.mapActions({
-				handleAddd:"hl/handleAddd"
+				handleAddd:"hl/handleAddd",
+				handleYanZheng:"hl/handleYanZheng"
 			})
 		},
 		data:function(){
@@ -123,6 +124,7 @@
 	border-bottom:2px solid #8FE4EE;
 	width:4.81rem;
 	height:.74rem;
+	font-size:30px;
 }
 .register>div:nth-child(1){
 	margin-top:1.38rem;	

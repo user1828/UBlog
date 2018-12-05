@@ -12,23 +12,22 @@ export default{
 	handleTo({commit,state}){
 		axios({
 			method:"post",
-			url:"http://104.248.253.118:8080/ublog/user/register",
+			url:"/ublog/user/register",
 			data:{
-				list:state.arr
+				"nickname":"啦啦啦",
+				"gender":"男",
+				"phone":"18438628193",
+				"school_name":"洛阳理工",
+				"password":"123456",
 			}
 		}).then((data)=>{
 			console.log(data)
 		})
 	},
-	handleLogin({commit,state}){
-		// console.log("data")
+	handleLogin({commit,state},params){
 		axios({
 			method:"get",
-			url:"http://104.248.253.118:8080/ublog/user/login",
-			data:{
-				nickname:"zhangfei",   
-				password:"123456"
-			},
+			url:"/ublog/user/login?username="+ state.arr.nickname + "&password="+state.arr.password+"",
 			headers:{
 				'Access-Control-Allow-Origin':'*'
 			},
@@ -38,5 +37,21 @@ export default{
 			console.log(data);
 			
 		  })
+	},
+	handleChange({commit},params){
+		commit("handleChange",params)
+	},
+	handleYanZheng(){
+		axios({
+			method:"get",
+			url:"/ublog/user/mobilecode",
+			data:{
+				"mycode":"17610002602"
+			}
+		})
+		.then((data)=>{
+			console.log(data)
+		})
 	}
+	
 }

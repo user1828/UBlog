@@ -10,31 +10,27 @@
             </div>
             <div></div>
         </div>
-        <div class="center" v-for="(item,index) in list">
+        <!-- 中心内容 -->
+        <div class="center" v-for="(item,index) in biaoqianlist.data">
             <div>
-                <img src="../../../static/img/aa.png">
+                 <img :src="item.activity.cate_add">
             </div>
             <div>
                 <div>
-                <span>活动主题:<span>运动无止境</span></span>
+                <span>活动主题:<span></span>{{item.activity.theme}}</span>
                 </div>
                 <div>
-                    <h3>康乐馆</h3>
+                    <h3>{{item.activity.place}}</h3>
                 </div>
             </div>
             <div>
                 <p> 时间:<span>2018年8月18日</span></p>
-                <p>费用:<span>78元</span></p></p>
+                <p>费用:<span>{{item.activity.fee}}元</span></p></p>
             </div>
             <div>
-                <h4>运动的体会</h4>
+                <h4>{{item.activity.title}}</h4>
                 <p>
-                    我们在青春肆意追求梦想，而梦想不曾走远，只是它爱的是现实。
-                    你的情敌很残忍，而在你的青春里，你却只能忍。你会饱受折磨，
-                    看着你的爱，渐渐冷冰，但这一切不会结束，只要你活着。为了反
-                    抗，我们在青春里不懈的挥洒汗水，偶尔暗自落泪。但要知道，真
-                    正属于你的，不曾走远。
-
+                    {{item.activity.content}}
                 </p>
             </div>
         </div>
@@ -44,43 +40,11 @@
 import axios from "axios";
 import Vuex from "vuex"
 export default {
-    
-        created() {
-            this.handleAdd();
-            // axios({
-            //     method:"delete",
-            //     url:"http://localhost:3000/list/3",
-                // data:{
-                //     name:"兼职",
-                //     arr:[
-                //         {
-                //             imgsrc:"../../../static/img/ccc.png",
-                //             activity:"生命永健康",
-                //             place:"金辉滑雪场",
-                //             time:"2018年8月18日",
-                //             cost:"66",
-                //         },
-                //         {
-                //             realize:"人生的感悟",
-                //             details:"我想，岁月就像那样，我们眼睁睁的看着自己的往事在面前一点点地单淡去，而我们的前景反而在背后一滴一滴地淡出，我们不知道下一站会在何处落脚，甚至不知道后面的视野会怎么样，只能走一步算一步。原谅捧花的我盛装出席，只为错过你，起到天灾人祸分给我，只为你这香气。",
-
-                //         }
-                //     ]
-                // }
-            // })
-        },
-        computed:{
-            ...Vuex.mapState({
-                list:state=>state.list,
-            })
-            
-        },
-         methods:{
-      ...Vuex.mapActions({
-          handleAdd:"events/handleAdd",
-
-      })
-         }
+     computed:{
+       ...Vuex.mapState({
+           biaoqianlist:state=>state.wcy.biaoqianlist,
+       })
+   },
 }
 </script>
 <style scoped>
@@ -97,8 +61,9 @@ export default {
       
        
     }
-    .header>div:nth-child(1) i{
+   .header>div:nth-child(1) a i{
         font-size: .46rem;
+        color: #fff;
     }
     .header>div:nth-child(2){
         margin-top: .58rem; 

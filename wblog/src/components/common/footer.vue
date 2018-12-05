@@ -40,7 +40,7 @@
 <style>
 	#footer{
 		width:100%;
-		height:.98rem;		
+		height:1.1rem;		
 		position:fixed;
 		bottom:0;
 		left:0;
@@ -72,7 +72,7 @@
 		top:-.5rem;
 	}
 	#footer>ul>li>span{
-		color:#aaaaaa;
-		font-size:12px;
+		color:#000000;
+		font-size:16px;
 	}
 </style>

@@ -10,39 +10,43 @@
             </div>
             <div></div>
         </div>
-        <div class="center">
+        <!-- 中心内容 -->
+        <div class="center" v-for="(item,index) in biaoqianlist.data">
             <div>
-                <img src="../../../static/img/aa.png">
+                <img :src="item.activity.cate_add">
             </div>
             <div>
                 <div>
-                <span>活动主题:<span>运动无止境</span></span>
+                <span>活动主题:<span></span>{{item.activity.theme}}</span>
                 </div>
                 <div>
-                    <h3>康乐馆</h3>
+                    <h3>{{item.activity.place}}</h3>
                 </div>
             </div>
             <div>
                 <p> 时间:<span>2018年8月18日</span></p>
-                <p>费用:<span>78元</span></p></p>
+                <p>费用:<span>{{item.activity.fee}}元</span></p></p>
             </div>
             <div>
-                <h4>运动的体会</h4>
+                <h4>{{item.activity.title}}</h4>
                 <p>
-                    我们在青春肆意追求梦想，而梦想不曾走远，只是它爱的是现实。
-                    你的情敌很残忍，而在你的青春里，你却只能忍。你会饱受折磨，
-                    看着你的爱，渐渐冷冰，但这一切不会结束，只要你活着。为了反
-                    抗，我们在青春里不懈的挥洒汗水，偶尔暗自落泪。但要知道，真
-                    正属于你的，不曾走远。
-
+                    {{item.activity.content}}
                 </p>
             </div>
         </div>
     </div>
 </template>
 <script>
+import Vuex from "vuex"
 export default {
-    
+   computed:{
+       ...Vuex.mapState({
+           biaoqianlist:state=>state.wcy.biaoqianlist,
+       })
+   },
+   created(){
+       console.log(this.biaoqianlist)
+   }
 }
 </script>
 <style scoped>
@@ -59,8 +63,9 @@ export default {
       
        
     }
-    .header>div:nth-child(1) i{
+   .header>div:nth-child(1) a i{
         font-size: .46rem;
+        color: #fff;
     }
     .header>div:nth-child(2){
         margin-top: .58rem; 

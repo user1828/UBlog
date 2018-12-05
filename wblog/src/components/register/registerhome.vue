@@ -20,5 +20,7 @@
 </script>
 
 <style>
-
+input{
+	font-size:30px;
+}
 </style>

@@ -104,6 +104,16 @@ export default new Router({
       component: lx_see
     },
     {
+      path:"/lx_newfriend",
+      name:"lx_newfriend",
+      component:lx_newfriend
+    },
+    {
+      path:"/lx_newsee",
+      name:"lx_newsee",
+      component:lx_newsee
+    },
+    {
       path:"/my",
       name:"my",
       component:my,

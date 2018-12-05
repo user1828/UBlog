@@ -1,6 +1,6 @@
 <template>
 	<div class="footer">
-		<button @click="handleGo() ,handleLogin()">登录</button>
+		<button @click="handleGo(),handleLogin()">登录</button>
 		<button @click="handleTo()">注册</button>
 	</div>
 </template>

@@ -10,7 +10,7 @@
 				<p>账号切换</p>
 				<i class="iconfont icon-youjiantou"></i>
 			</li>
-			<li>
+			<li @click="handleJuan()">
 				<i class="iconfont icon-youhuiquan1"></i>
 				<p>优惠券</p>
 				<i class="iconfont icon-youjiantou"></i>
@@ -52,6 +52,9 @@ export default{
 		},
 		handleBack(){
 			this.$router.back()
+		},
+		handleJuan(){
+			this.$router.push("/coiling");
 		}
 	},
 	components:{

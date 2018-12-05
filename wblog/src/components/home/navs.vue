@@ -1,7 +1,7 @@
 <template>
   <div class="tab" ref="tab">
     <ul class="tab_content" ref="tabWrapper">
-      <li class="tab_item" v-for="(item,index) in itemList" ref="tabitem" @click="handleGo(index)">
+      <li class="tab_item" v-for="(item,index) in itemList" ref="tabitem" @click="handleGo(index), handleTiaoZhuan(itemList[index].id)">
         <img :src="item.src">
         <span>{{item.title}}</span>
       </li>
@@ -11,39 +11,48 @@
 
   <script>
 import BScroll from "better-scroll";
+import Vuex from "vuex";
 export default {
   data() {
     return {
       itemList: [
         {
+          id:"1",
           title: "科技",
           src: "../../../static/img/keji_icon@2x.png"
         },
         {
+          id:"2",
           title: "生活",
           src: "../../../static/img/shenghuo_icon@2x.png"
         },
         {
+          id:"3",
           title: "时尚",
           src: "../../../static/img/shishang_icon@3x.png"
         },
         {
+          id:"4",
           title: "娱乐",
           src: "../../../static/img/yule_icon@2x.png"
         },
         {
+          id:"5",
           title: "文艺",
           src: "../../../static/img/wenyi_icon@2x.png"
         },
         {
+          id:"6",
           title: "健康",
           src: "../../../static/img/jiankang_icon@2x.png"
         },
         {
+          id:"7",
           title: "兼职",
           src: "../../../static/img/jianzhi_icon@2x.png"
         },
         {
+          id:"8",
           title: "考试",
           src: "../../../static/img/kaoshi_icon@2x.png"
         }
@@ -83,10 +92,10 @@ export default {
           break;
 
         case 1:
-          this.$router.push("seikasu");
+          this.$router.push("seikatsu");
           break;
         case 2:
-          this.$router.push("fashion");
+          this.$router.push("fashiun");
           break;
         case 3:
           this.$router.push("movie");
@@ -104,7 +113,11 @@ export default {
           this.$router.push("exam");
           break;
       }
-    }
+    },
+    ...Vuex.mapActions({
+      handleTiaoZhuan:"wcy/handleTiaoZhuan"
+    })
+
   }
 };
 </script>

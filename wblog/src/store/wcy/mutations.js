@@ -20,5 +20,9 @@ export default {
 	handleDetails(state,params){
 		state.id = params;
 		console.log(state.id)
+	},
+	handleTiaoZhuan(state,params){
+		state.biaoqianlist = params.data;
+		
 	}
 }

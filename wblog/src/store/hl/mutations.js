@@ -14,5 +14,12 @@ export default{
 		state.arr.password = params.psd;
 		state.arr.nickname = params.user;
 		state.arr.gender = params.gender;
+	},
+	handleChange(state,params){
+		if(params.id == 1){
+			state.arr.nickname = params.val
+		}else if(params.id == 2){
+			state.arr.password = params.val
+		}
 	}
 }

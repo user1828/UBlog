@@ -8,7 +8,7 @@
         <!-- //通讯录 消息 对话框 -->
         <p>{{title}}</p>
       </div>
-      <div class="chatheader_r">
+      <div class="chatheader_r" @click="handleAddFriend()">
           <!-- //加号按钮 -->
           <img src="../../../static/icon/-tong-icon_add@2x.png">
       </div>
@@ -31,6 +31,9 @@ export default {
   methods:{
     handleGoback(){
       this.$router.go(-1);
+    },
+    handleAddFriend(){
+      this.$router.push("/lx_addfriend");
     }
   }
 };
@@ -61,6 +64,6 @@ export default {
 }
 .chatheader_c{
   color: #fff;
-  font-size: 22px;
+  font-size: 30px;
 }
 </style>

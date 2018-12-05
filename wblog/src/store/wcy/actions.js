@@ -41,6 +41,17 @@ export default {
 			commit("handleReceiveCoiling",params)
 		})
 		
+	},
+	//跳转到8个标签
+	handleTiaoZhuan({commit},params){
+		console.log(params)
+		axios({
+			method:"get",
+			url:"/ublog/activity/getactivitybycateid?id="+params+"",
+		}).then((data)=>{
+			commit("handleTiaoZhuan",data)
+			console.log(data)
+		})
 	}
 	
 }

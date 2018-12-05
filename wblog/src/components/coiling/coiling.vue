@@ -39,7 +39,7 @@
 		},
 		methods:{
 			handleBack(){
-				this.$router.push("/home")
+				this.$router.back()
 			},
 			handleReceiveCoiling(index){
 				this.coupons[index].status = false;

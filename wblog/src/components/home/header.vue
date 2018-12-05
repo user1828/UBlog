@@ -5,7 +5,7 @@
 				<div></div>
 				<div>UBlog</div>
 				<div>
-					<i class="iconfont icon-xiaoxi"></i>
+					<i class="iconfont icon-xiaoxi" @click="handleXiaoXi()"></i>
 					<i class="iconfont icon-wode" @click="handleMy()"></i>
 				</div>
 			</div>
@@ -36,10 +36,10 @@
 				this.$router.push("/coiling")
 			},
 			handleMy(){
-				this.$router.push("/")
+				this.$router.push("/setting")
 			},
-			handleCsrollHeight(){
-				
+			handleXiaoXi(){
+				this.$router.push({path:"/lx_newfriend",query:{name:"好友请求"}})
 			}
 		},
 		mounted(){
