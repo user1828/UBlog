@@ -10,15 +10,29 @@ export default{
 		console.log(params)
 	},
 	handleTo({commit,state}){
-		axios({
-			method:"post",
-			url:"/ublog/user/register",
-			data:{
-				"nickname":"啦啦啦",
-				"gender":"男",
-				"phone":"18438628193",
-				"school_name":"洛阳理工",
-				"password":"123456",
+		// axios({
+		// 	method:"post",
+		// 	url:"/ublog/user/register",
+		// 	data:{
+		// 		// list:state.arr
+		// 		"school_name":"天津商业大学",
+		// 		"major_name":"计算机科学与技术",
+		// 		"phone":"15122608183",
+		// 		"password":"hl19970211",
+		// 		"nickname":"嘿嘿嘿",
+		// 		"gender":"1"
+		// 	}
+		// }).then((data)=>{
+		// 	console.log(data)
+		// })
+		axios.get("/ublog/user/register",{
+			params:{
+				"school_name":"天津商业大学",
+				"major_name":"计算机科学与技术",
+				"phone":"15122608183",
+				"password":"hl19970211",
+				"nickname":"嘿嘿嘿",
+				"gender":"1"
 			}
 		}).then((data)=>{
 			console.log(data)
