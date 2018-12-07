@@ -24,7 +24,7 @@
 	export default{
 		methods:{
 			handleTui(){
-				this.$router.push("/")
+				this.$router.push("/home")
 			},
 			handleFriend(){
 				this.$router.push("/focus")

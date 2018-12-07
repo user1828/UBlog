@@ -6,7 +6,7 @@
 		</div>
 		<div>
 			<p>密码</p>
-			<input type="text" v-model="psd" @input="handleChange({val:psd,id:2})">
+			<input type="password" v-model="psd" @input="handleChange({val:psd,id:2})">
 		</div>
 	</div>	
 </template>

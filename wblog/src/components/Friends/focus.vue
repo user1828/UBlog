@@ -20,7 +20,7 @@
                         <p><span>6</span>分钟前</p>
                     </div>
                     <div>
-                          <i class="iconfont icon-good">
+                          <i>
                               
                           </i>
                             <router-link to="discuss">

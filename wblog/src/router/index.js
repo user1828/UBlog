@@ -12,6 +12,7 @@ import Release from '@/components/mysetting/release'
 import information from '@/components/mysetting/information'
 import setting from '@/components/mysetting/setting'
 import account from '@/components/mysetting/account'
+import mypraise from '../components/mysetting/mypraise'
 /* hl登录注册组件 */
 import registerhome from '../components/register/registerhome.vue'
 import message from '../components/register/message.vue'
@@ -53,8 +54,8 @@ export default new Router({
   routes: [
     {
       path : "/",
-      redirect :"/home"
-    },
+      redirect :"/login"
+    },  
     {
 
       path: '/home',
@@ -232,6 +233,11 @@ export default new Router({
       path:"/seikatsu",
       name:"seikatsu",
       component:seikatsu
+    },
+    {
+      path:"/mypraise",
+      name:"mypraise",
+      component:mypraise
     }
   ]
 })

@@ -4,85 +4,13 @@
 
 			<!-- 好友列表模拟的数据 -->
 			<section>
-				<router-link :to="{ path: '/chatList', query: { name: '消息' }}">
-					<div class="weui-cells__title">B</div>
-					<div class="weui-cells">
+				<router-link :to="{ path: '/chatList', query: { name: '消息' }}" v-for="(item,index) in user_friends" :key="index">
+				<div id = "cells_box" class="weui-cells__title" >A</div>
+					<div class="weui-cells" id = "user_box">
 						<div class="weui-cell weui-cell_access">
-							<div class="weui-cell__hd"><img src="https://sinacloud.net/vue-wechat/images/headers/baiqian.jpg" class="home__mini-avatar___1nSrW"></div>
+							<div class="weui-cell__hd"><img :src="item.user_img" class="home__mini-avatar___1nSrW"></div>
 							<div class="weui-cell__bd">
-								白浅
-							</div>
-						</div>
-					</div>
-					<div class="weui-cells__title">G</div>
-					<div class="weui-cells">
-						<div class="weui-cell weui-cell_access">
-							<div class="weui-cell__hd"><img src="https://sinacloud.net/vue-wechat/images/headers/guangyu.jpg" class="home__mini-avatar___1nSrW"></div>
-							<div class="weui-cell__bd">
-								关羽
-							</div>
-						</div>
-					</div>
-					<div class="weui-cells__title">H</div>
-					<div class="weui-cells">
-						<div class="weui-cell weui-cell_access">
-							<div class="weui-cell__hd"><img src="https://sinacloud.net/vue-wechat/images/headers/huangyueying.jpg" class="home__mini-avatar___1nSrW"></div>
-							<div class="weui-cell__bd">
-								黄月英
-							</div>
-						</div>
-					</div>
-					<div class="weui-cells__title">L</div>
-					<div class="weui-cells">
-						<div class="weui-cell weui-cell_access">
-							<div class="weui-cell__hd"><img src="https://sinacloud.net/vue-wechat/images/headers/liubei.jpg" class="home__mini-avatar___1nSrW"></div>
-							<div class="weui-cell__bd">
-								刘备
-							</div>
-						</div>
-					</div>
-					<div class="weui-cells__title">S</div>
-					<div class="weui-cells">
-						<div class="weui-cell weui-cell_access">
-							<div class="weui-cell__hd"><img src="https://sinacloud.net/vue-wechat/images/headers/sunshangxiang.jpg" class="home__mini-avatar___1nSrW"></div>
-							<div class="weui-cell__bd">
-								孙尚香2
-							</div>
-						</div>
-						<div class="weui-cell weui-cell_access">
-							<div class="weui-cell__hd"><img src="https://sinacloud.net/vue-wechat/images/headers/sunquan.jpg" class="home__mini-avatar___1nSrW"></div>
-							<div class="weui-cell__bd">
-								孙权
-							</div>
-						</div>
-					</div>
-					<div class="weui-cells__title">Y</div>
-					<div class="weui-cells">
-						<div class="weui-cell weui-cell_access">
-							<div class="weui-cell__hd"><img src="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg" class="home__mini-avatar___1nSrW"></div>
-							<div class="weui-cell__bd">
-								夜华
-							</div>
-						</div>
-					</div>
-					<div class="weui-cells__title">Z</div>
-					<div class="weui-cells">
-						<div class="weui-cell weui-cell_access">
-							<div class="weui-cell__hd"><img src="https://sinacloud.net/vue-wechat/images/headers/header01.png" class="home__mini-avatar___1nSrW"></div>
-							<div class="weui-cell__bd">
-								阿荡
-							</div>
-						</div>
-						<div class="weui-cell weui-cell_access">
-							<div class="weui-cell__hd"><img src="https://sinacloud.net/vue-wechat/images/headers/zhugeliang.jpg" class="home__mini-avatar___1nSrW"></div>
-							<div class="weui-cell__bd">
-								诸葛亮
-							</div>
-						</div>
-						<div class="weui-cell weui-cell_access">
-							<div class="weui-cell__hd"><img src="https://sinacloud.net/vue-wechat/images/headers/zhenji.jpg" class="home__mini-avatar___1nSrW"></div>
-							<div class="weui-cell__bd">
-								甄姬
+								{{item.nickname}}
 							</div>
 						</div>
 					</div>
@@ -122,11 +50,13 @@
 			...Vuex.mapState({
 				letters: state => state.letters,
 				friendList: state => state.friendList,
+				user_id:state=>state.hl.user_id,
+				user_friends:state=>state.user_friends,
 			})
 		},
 		created() {
 			this.throughLetters();
-			this.getFriends();
+			this.getFriends(this.user_id);
 		},
 		methods: {
 
@@ -177,4 +107,32 @@
 		height: 32px;
 		margin-right: 10px;
 	}
+	.weui-cells__title {
+    margin-top: .77em;
+    margin-bottom: .3em;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #999;
+    font-size: 14px;
+}
+#cells_box{
+	height:.5rem;
+	font-size:30px;
+}
+#user_box{
+	height:1rem;
+	font-size:30px;
+}
+#user_box>div{
+	height: 100%;
+}
+#user_box>div>div{
+	height:100%;
+	width:.8rem;
+	line-height:1rem;
+}
+#user_box>div>div>img{
+	width:100%;
+	height:100%;
+}
 </style>

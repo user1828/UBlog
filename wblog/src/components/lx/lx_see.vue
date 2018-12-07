@@ -10,18 +10,18 @@
                     <img src="../../../static/img/lx_peoplebg.png">
                 </div>
                 <div class="smalltou">
-                    <img src="../../../static/img/lx_smalltou.gif">
+                    <img :src="user_obj.user_img">
                 </div>
             </div>
             <div class="see-b">
                 <div class="name">
                     <i class="iconfont icon-nv2"></i>
-                    <span>咔咔</span>
+                    <span>{{user_obj.nickname}}</span>
                 </div>
                 <p class="school">
                     <i class="iconfont icon-My"></i>
                     <b>学校信息：</b>
-                    <span>北京大学  经济学</span>
+                    <span>{{user_obj.school_name}}  {{user_obj.major_name}}</span>
                 </p>
                 <p class="tab">
                     <i class="iconfont icon-biaoqian4"></i>
@@ -36,12 +36,12 @@
                 <p class="msg">
                     <i class="iconfont icon-liuyan"></i>
                     <b>留言：</b>
-                    <input type="text" value="很高兴认识你！"></input>
+                    <input type="text" value="请留言吧！"></input>
                 </p>
             </div>
         </section>
         <b_button-com>
-            <div class="btn" slot="title">添加好友</div>
+            <div class="btn" slot="title" @click="handleTianJia(),handleAddFriend(user_obj.id)">添加好友</div>
         </b_button-com>
     </div> 
 </template>
@@ -50,10 +50,39 @@
 import header from './common/header';
 import b_button from './common/b_button';
 
+import Vuex from "vuex"
 export default {
+    data(){
+        return{
+            user_obj:{
+
+            }
+        }
+    },
+    created(){
+        this.render_yonghu(this.$route.query.id)
+        
+    },
     components:{
         "b_button-com":b_button,
         "header-com":header
+    },
+    methods:{
+        handleTianJia(){
+            this.$router.push({path:"/addressList",query:{name:"通讯录"}})   
+        },
+       ...Vuex.mapActions({
+            handleAddFriend:"lx/handleAddFriend"
+        }),
+        render_yonghu(id){
+            this.user_obj=this.search_add_frends[id]
+            console.log(this.user_obj)
+        }
+    },
+    computed:{
+         ...Vuex.mapState({
+            search_add_frends:state=>state.lx.search_add_frends
+        }),
     }
 }
 </script>
@@ -125,5 +154,10 @@ export default {
     .see-b .msg span{
         display: block;
         padding-left: .54rem;
+    }
+     .see-b .msg input{
+       font-size:.26rem;
+       font-family:PingFangSC-Regular;
+       font-weight:400;
     }
 </style>

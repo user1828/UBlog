@@ -210,7 +210,6 @@
 	margin-right:1.2rem;
 }
 .box>li:nth-child(2){
-	margin-top: .2rem;
 	margin-right:.8rem;
 }
 .box>li>span{
@@ -218,12 +217,10 @@
 	margin-left:.4rem;
 }
 .box>li>img{
-	width:1rem;
-	height:1rem;
+	width:.5rem;
+	height:.6rem;
 }
-.box>li:nth-child(1){
-	margin-top:.2rem
-}
+
 
 li.checked>span{
 	color:#27d1d0;

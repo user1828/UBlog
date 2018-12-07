@@ -5,7 +5,8 @@ export default{
 			phone:"",
 			password:"",
 			nickname:"",
-			gender:"",
+			gender:null,
 		},
-		list:[]
+		list:[],
+		user_id:null,
 }

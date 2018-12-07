@@ -46,7 +46,8 @@
         padding-left: .1rem;
         border:none;
         outline: none;
-        background: #faf7f9;
+        background: #fff;
+        font-size:30px;
     }
     #term .add{
         display: flex;
@@ -70,7 +71,7 @@ export default {
                 name:'',
                 school:'',
                 subject:'',
-                stab:[]
+                tabarr:[],
            }
         }
     },
@@ -78,7 +79,7 @@ export default {
         this.obj.name = this.searchfriend.name;
         this.obj.school = this.searchfriend.school;
         this.obj.subject = this.searchfriend.subject;
-        this.obj.stab = this.searchfriend.stab;
+        this.obj.tabarr = this.search_tabarr;
     },
     components:{
         "header-com":Header,
@@ -98,7 +99,8 @@ export default {
     },
     computed:{
         ...Vuex.mapState({
-           searchfriend:state=>state.lx.searchfriend
+           searchfriend:state=>state.lx.searchfriend,
+            search_tabarr:state=>state.lx.tabarr,
         }),      
     }
 }

@@ -3,7 +3,7 @@
         <div class="my">
             <div class="header">
                         <img class="bj" src="../../../static/img/banner.png">
-                    <div>
+                    <div @click="handleGeRen()">
                         <img src="../../../static/img/touxiang.png"/>
                     </div>
                     
@@ -173,7 +173,9 @@ export default {
 
     },
     methods:{
-  
+        handleGeRen(){
+            this.$router.push("/mypraise")
+        }
     }
 }
 

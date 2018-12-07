@@ -9,7 +9,7 @@
                 <span>选择标签</span>
             </h3>
             <div class="tabdet">
-                <div  :class= "item.status==0? tabclass:tabaclass"
+                <div  :class= "item.status==1? tabclass:tabaclass"
                  v-for="(item,index) in tabarr" @click="handleSeltab(index)">
                     <p>
                         <i :class = 'item.cl' ></i>
@@ -114,7 +114,7 @@ export default {
             handleSeltabarr:"lx/handleSeltabarr"
         }),
         handleGo(){
-            this.$router.push("/lx_addfriend");
+            this.$router.back();
             // console.log("111")
         }
     },

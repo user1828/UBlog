@@ -21,5 +21,8 @@ export default{
 		}else if(params.id == 2){
 			state.arr.password = params.val
 		}
+	},
+	handlLogin(state,params){
+		state.user_id = params;
 	}
 }

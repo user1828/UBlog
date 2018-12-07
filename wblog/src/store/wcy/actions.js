@@ -6,30 +6,30 @@ export default {
     	// if(params<6){
     		axios({
     			method:"get",
-    			url:"http://localhost:3000/list",
+    			url:"../../../static/data.json",
     		}).then((data)=>{
-    			commit("handleGetActions",data.data)
+    			commit("handleGetActions",data.data.list)
     			// console.log(data);
     		})
    	// }		
     },
 	//点击活动列表进行跳转进入详情页
 	handleDetails({commit},params){
-		axios({
-			method:"get",
-			url:"http://localhost:3000/action?" + params
-		}).then((data)=>{
-			commit("handleDetails",data)
-		})
+		// axios({
+		// 	method:"get",
+		// 	url:"http://localhost:3000/action?" + params
+		// }).then((data)=>{
+		// 	commit("handleDetails",data)
+		// })
 	},
 	//动态获取优惠卷
 	handleGetCoiling({commit}){
 		axios({
 			method:"get",
-			url:"http://localhost:3000/coupon"
+			url:"../../../static/data.json"
 		}).then((data)=>{
 			// console.log(data.data)
-			commit("handleGetCoiling",data.data)
+			commit("handleGetCoiling",data.data.coupon)
 		})		
 	},
 	//将已经获取到的优惠卷存进数据库

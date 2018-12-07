@@ -20,7 +20,7 @@
     </div>
     <!-- 底部版块 -->
     <div class="btn_box">
-      <p>
+      <p @click="handleBiaoQian()">
         <i class="iconfont icon-biaoqian3"></i>
         <span>添加标签</span>
       </p>
@@ -65,6 +65,7 @@
   resize:none;
   outline: none;
   padding:0.2rem 0.25rem;
+  font-size:30px;
 }
 .release_share>#release_phone{
   border:none;
@@ -223,6 +224,10 @@ export default {
     handleGo(){
      this.$router.push({name :'home'})
     },
+    // 跳转到标签页
+    handleBiaoQian(){
+      this.$router.push("/lx_addtab")
+    }
   },
   components:{
     "releaseHeader-com":releaseHeader

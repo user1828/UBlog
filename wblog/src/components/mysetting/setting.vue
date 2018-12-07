@@ -5,11 +5,6 @@
 		</releaseHeader-com>
 			
 		<ul>
-			<li @click="handleforward()">
-				<!-- <i class="iconfont icon-icon-" @click="handleBack()"></i> -->
-				<p>账号切换</p>
-				<i class="iconfont icon-youjiantou"></i>
-			</li>
 			<li @click="handleJuan()">
 				<i class="iconfont icon-youhuiquan1"></i>
 				<p>优惠券</p>
@@ -20,9 +15,9 @@
 				<p>帮助与反馈</p>
 				<i class="iconfont icon-youjiantou"></i>
 			</li>
-			<li>
+			<li @click="handleGeRen()">
 				<i class="iconfont icon-xunzhang"></i>
-				<p>关于</p>
+				<p>修改个人信息</p>
 				<i class="iconfont icon-youjiantou"></i>
 			</li>
 			<li @click="handleGo()">
@@ -55,6 +50,9 @@ export default{
 		},
 		handleJuan(){
 			this.$router.push("/coiling");
+		},
+		handleGeRen(){
+			this.$router.push("/information");
 		}
 	},
 	components:{

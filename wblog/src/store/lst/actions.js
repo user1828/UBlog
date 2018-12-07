@@ -1,6 +1,6 @@
 export default {
-  handleEnter({commit},params){
-    commit("handleEnter",params)
-    console.log(params);
+  handleGetId({commit},params){
+    commit("handleEnter")
+    console.log(11);
   }
 }

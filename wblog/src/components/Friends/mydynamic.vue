@@ -18,7 +18,7 @@
                     </div>
                     <div>
                           
-                          <i class="iconfont icon-good">  
+                          <i>  
                           </i>  
                          
                           <router-link to="discuss">

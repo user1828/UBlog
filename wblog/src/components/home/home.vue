@@ -19,6 +19,7 @@
 	import content from "./content"
 	import footer from "../common/footer"
 	import navs from "./navs"
+	import Vuex from "vuex"
 	export default{
 		components:{
 			"header-com":header,
@@ -26,6 +27,14 @@
 			"banner-com":banner,
 			"footer-com":footer,
 			"navs-com":navs
+		},
+		created(){
+			this.tongyi()
+		},
+		methods:{
+			...Vuex.mapActions({
+				tongyi:"lx/tongyi"
+			})
 		}
 	}
 </script>

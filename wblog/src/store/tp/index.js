@@ -11,10 +11,10 @@ const actions = {
   handleAdd({commit}){
     axios({
     method:"get",
-    url:"http://localhost:3000/arr",
+    url:"../../../static/data.json",
     }).then((data)=>{
-        commit("handleAdd",data.data)
-        // console.log(data.data)
+        commit("handleAdd",data.data.arr)
+        console.log(data)
     })
   }
   

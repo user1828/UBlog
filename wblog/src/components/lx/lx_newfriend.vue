@@ -6,21 +6,21 @@
       <i class="iconfont icon-jiahao2 jia" slot="addfriend"></i>
     </header-com>
     <section>
-      <div class="wrapper" ref="wrapper" v-for="(item,index) in list">
-        <dl class="newfriend content" @click="handleGo()">
+      <div class="wrapper" ref="wrapper" v-for="(item,index) in jieshou_frends">
+        <dl class="newfriend content" @click="handleGo(index)">
           <dt>
-            <img src="../../../static/img/lx_smalltou.gif" alt>
+            <img :src="item.img_address" alt>
           </dt>
           <div class="xinxi">
             <dd>
-              <span class="name">咔咔</span>
+              <span class="name"></span>
               <span class="time">07:32</span>
             </dd>
-            <dd class="msg">嗨，可以交个朋友吗？</dd>
+            <dd class="msg">{{item.wait_friends.msg}}</dd>
           </div>
           <div class="caozuo">
             <p class="alow" @click.stop="handleJieShou()">接受</p>
-            <p class="del" @click>删除</p>
+            <p class="del" @click.stop="handleDel(index)">删除</p>
           </div>
         </dl>
       </div>
@@ -31,22 +31,25 @@
 <script>
 import header from "./common/header";
 import BScroll from "better-scroll";
-
+import Vuex from "vuex"
 export default {
   data() {
     return {
-      list: [1, 2, 3, 4, 5]
+     
     };
   },
   components: {
     "header-com": header
   },
   methods: {
-    handleGo() {
-      this.$router.push("/lx_newsee");
+    handleGo(index) {
+      this.$router.push({ path: "/lx_newsee", query: {id:this.jieshou_frends[index].wait_friends.fid}});
     },
-    handleJieShou(e) {
-      this.$router.push({ path: "/addressList", query: { name: "通讯录" } });
+    handleJieShou() {
+      this.$router.push({ path: "/addressList", query: { name: "通讯录"}});
+    },
+    handleDel(index){
+      this.$refs.wrapper[index].remove()
     }
   },
   mounted() {
@@ -60,6 +63,11 @@ export default {
     }
 
     //this.$refs.name   可以获取到当前添加了 ref="name"属性的DOM元素
+  },
+  computed:{
+    ...Vuex.mapState({
+      jieshou_frends:state=>state.lx.jieshou_frends
+    })
   }
 };
 </script>

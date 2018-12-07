@@ -10,34 +10,19 @@ export default{
 		console.log(params)
 	},
 	handleTo({commit,state}){
-		// axios({
-		// 	method:"post",
-		// 	url:"/ublog/user/register",
-		// 	data:{
-		// 		// list:state.arr
-		// 		"school_name":"天津商业大学",
-		// 		"major_name":"计算机科学与技术",
-		// 		"phone":"15122608183",
-		// 		"password":"hl19970211",
-		// 		"nickname":"嘿嘿嘿",
-		// 		"gender":"1"
-		// 	}
-		// }).then((data)=>{
-		// 	console.log(data)
-		// })
-		axios.get("/ublog/user/register",{
-			params:{
-				"school_name":"天津商业大学",
-				"major_name":"计算机科学与技术",
-				"phone":"15122608183",
-				"password":"hl19970211",
-				"nickname":"嘿嘿嘿",
-				"gender":"1"
-			}
+		axios.post("/ublog/user/register",{
+				"school_name":state.arr.school_name,
+				"major_name":state.arr.major_name,
+				"phone":state.arr.phone,
+				"password":state.arr.password,
+				"nickname":state.arr.nickname,
+				"gender":state.arr.gender,
+				
 		}).then((data)=>{
 			console.log(data)
 		})
 	},
+	// 登录
 	handleLogin({commit,state},params){
 		axios({
 			method:"get",
@@ -48,7 +33,8 @@ export default{
 			responseType:"json",
 		  }).
 		  then((data)=>{
-			console.log(data);
+			commit("handlLogin",data.data.id)
+			alert("登录成功")
 			
 		  })
 	},
@@ -60,7 +46,7 @@ export default{
 			method:"get",
 			url:"/ublog/user/mobilecode",
 			data:{
-				"mycode":"17610002602"
+				"mycode":"18438628193"
 			}
 		})
 		.then((data)=>{

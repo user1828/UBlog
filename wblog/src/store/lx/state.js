@@ -4,6 +4,8 @@ export default {
         name:'',
         school:'',
         subject:'',
-        stab:[]
-    }
+    },
+    search_frends:{},
+    search_add_frends:[],
+    jieshou_frends:[],
 }

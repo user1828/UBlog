@@ -21,7 +21,8 @@ const state = {
   commentsl: [],
   comments: [],
 	contactsInitialList:[],
-	coilingList:[]
+  coilingList:[],
+  user_friends:[],
 }
 
 // 完成业务逻辑
@@ -29,9 +30,9 @@ const actions = {
   getFriends({commit},params){
     axios({
       method:"get",
-      url:"/ublog/myinfo/find_all_newfriend"
+      url:"/ublog/contact/getallcontact?fid=18"
     }).then((data)=>{
-      console.log(data);
+      commit("getFriends",data.data.data)
     })
   },
   throughLetters({
@@ -57,9 +58,6 @@ const actions = {
 
 // 对数据进行操作
 const mutations = {
-  getFriends(state,params){
-    state.friendList.push(params);
-  },
   handleAdd(state, params) {
     state.arr = params;
     var arr = [];
@@ -70,7 +68,6 @@ const mutations = {
       // list = item.list;
       state.imgs.push(item.list);
       arr.push(item.list[1].commentslist[1])
-
       arrtime.push(item.list[2])
     })
     // console.log(arrtime);
@@ -81,6 +78,10 @@ const mutations = {
     for (var i = 0; i < 26; i++) {
       state.letters.push(String.fromCharCode((65 + i)));
     }
+  },
+  // 通讯录模块进入获取好友信息
+  getFriends(state,params){
+    state.user_friends = params;
   }
     
     

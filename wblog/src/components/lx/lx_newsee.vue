@@ -11,7 +11,7 @@
                     <img src="../../../static/img/lx_peoplebg.png">
                 </div>
                 <div class="smalltou">
-                    <img src="../../../static/img/lx_smalltou.gif">
+                    <img src="http://ceshi.qfjava.cn/group1/M00/00/04/rB8xvlvqtVOAKmbXAAAcjZCHgjY980.jpg">
                 </div>
             </div>
             <div class="see-b">
@@ -46,7 +46,7 @@
             </div>
         </section>
         <b_button-com>
-            <div slot="title" class="btn">通过验证</div>
+            <div slot="title" class="btn" @click="handleBtn()">通过验证</div>
         </b_button-com>
      </div>
 </template>
@@ -59,6 +59,14 @@ export default {
     components:{
         "header-com":Header,
         "b_button-com":b_button
+    },
+    created(){
+        console.log(this.$route.query.id)
+    },
+    methods:{
+        handleBtn(){
+            this.$router.push("/home")
+        }
     }
 }
 </script>

@@ -4,13 +4,13 @@
             <span slot = "title">搜索结果</span>
         </header-com>
         <section id="search-com">
-            <dl class="people" @click="handleGo()">
+            <dl class="people" @click="handleGo(index)" v-for="(item,index) in search_add_frends" :key="index">
                 <dt>
-                    <img src="" alt="">
+                    <img :src="item.user_img" alt="">
                 </dt>
                 <div>
-                    <dd class="name">咔咔</dd>
-                    <dd class="school">北京大学 经济学
+                    <dd class="name">{{item.nickname}}</dd>
+                    <dd class="school">{{item.school_name}}{{item.major_name}}
                         <i class="iconfont icon-youjiantou3"></i>
                     </dd>
                     <dd class="tab">考研党 旅行 音乐</dd>
@@ -22,14 +22,28 @@
 
 <script>
 import header from './common/header';
+import Vuex from "vuex"
 export default {
+    created(){
+        this.getSearchFrends(this.search_frends)
+        console.log(this.search_add_frends)
+    },
+    computed:{
+        ...Vuex.mapState({
+           search_frends:state=>state.lx.search_frends,
+           search_add_frends:state=>state.lx.search_add_frends
+        }),      
+    },
     components:{
         "header-com":header,
     },
     methods:{
-        handleGo(){
-            this.$router.push("/lx_see");
-        }
+        handleGo(index){
+            this.$router.push({name:"lx_see",query:{id:index}});
+        },
+        ...Vuex.mapActions({
+            getSearchFrends:"lx/getSearchFrends",
+        }),
     }
 }
 </script>
@@ -51,6 +65,8 @@ export default {
         width:1.12rem;
         height:1.12rem;
         border-radius:50%;
+        margin-top:40px;
+        margin-left:20px;
     }
     .people div{
         display: flex;
